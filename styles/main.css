@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Nunito', sans-serif;
+}
+
+#main-container {
+	background-color: brown;
+	padding: 36px;
+	display: block;
+	height: 100vh;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: none;
+	gap: 16px;
+	justify-content: space-between;
+}
+
+header > :nth-child(n) {
+	flex: 1;
+	background-color: rgb(183, 183, 254);
+	display: flex;
+	align-items: flex-end;
+	height: 50px;
+	justify-content: center;
+	padding-bottom: 8px;
+}
+
+header > .banner-container {
+	flex: 3;
+	background-color: coral;
+}
+
+header > .auth-action {
+	justify-content: space-around;
+
+}
+
+header > .auth- > p {
+	cursor: pointer;
+}
+
+
+.notYet {
+	cursor: pointer;
+	position: relative;
+}
+
+.notYet::after {
+	content: "This feature is unavailable at the moment.";
+	position: absolute;
+	top: 40px;
+    width: 200px;
+    height: 40pxaa;
+    left: 160px;
+	width: auto;
+	height: auto;
+	/* display: none; */
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.notYet:hover:after {
+	display: block;
+}
