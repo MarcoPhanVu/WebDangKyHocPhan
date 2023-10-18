@@ -27,7 +27,16 @@
 			<p class="log-out">Đăng xuất</p> -->
 		</div>
 	</header>
-	<div id="main-container"></div>
+	<div id="main-container">
+		<div class="block-container side-bar">
+			<h3 class="title">Chức năng</h3>
+			<div class="btn-option">Thời khoá biểu</div>
+			<div class="btn-option">Thông tin học phần</div>
+			<div class="btn-option">Học phần tương đương</div>
+			<div class="btn-option">Lịch sử đăng ký</div>
+		</div>
+		
+	</div>
 	<footer></footer>
 </body>
 </html>
