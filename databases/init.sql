@@ -44,41 +44,6 @@ CREATE TABLE course (
 	CONSTRAINT fk_lecturerID_crs FOREIGN KEY (lecturerID) REFERENCES lecturer(lecturerID) ON DELETE CASCADE
 );
 
-CREATE TABLE attendState ( -- Tình trạng học phần của sinh viên
-	studentID INT(50) NOT NULL,
-	courseID VARCHAR(10) NOT NULL,
-	state INT(1),
-	score INT(10),
-
-	CONSTRAINT fk_studentID_attendState FOREIGN KEY(studentID) REFERENCES student(studentID) ON DELETE CASCADE,
-	CONSTRAINT fk_courseID_attendState FOREIGN KEY(courseID) REFERENCES course(courseID) ON DELETE CASCADE
-);
-
-CREATE TABLE courseState (
-	courseID VARCHAR(10) NOT NULL,
-	
-
-	CONSTRAINT fk_courseID_courseState FOREIGN KEY(courseID) REFERENCES course(courseID) ON DELETE CASCADE
-
-);
-
--- CREATE TABLE scheduleBase (
--- 	
--- );
-
-CREATE TABLE attendingLog (
-	attendID VARCHAR(10) NOT NULL UNIQUE,
-	timeStamp TIME,
-	statis VARCHAR(100) NOT NULL,
-	PRIMARY KEY(attendID),
-
-	studentID INT(50) NOT NULL,
-	courseID VARCHAR(10) NOT NULL,
-
-	CONSTRAINT fk_studentID_att FOREIGN KEY(studentID) REFERENCES student(studentID) ON DELETE CASCADE,
-	CONSTRAINT fk_courseID_att FOREIGN KEY(courseID) REFERENCES course(courseID) ON DELETE CASCADE
-);
-
 CREATE TABLE teaches (
 	lecturerID VARCHAR(10) NOT NULL,
 	courseID VARCHAR(10) NOT NULL,
@@ -86,8 +51,3 @@ CREATE TABLE teaches (
 	CONSTRAINT fk_lecturerID_tch FOREIGN KEY(lecturerID) REFERENCES lecturer(lecturerID) ON DELETE CASCADE,
 	CONSTRAINT fk_courseID_tch FOREIGN KEY(courseID) REFERENCES course(courseID) ON DELETE CASCADE
 );
-
-
--- ALTER TABLE wallet_category ADD COLUMN connectionID INT(10) PRIMARY KEY; 
--- Left it for future me to copy the syntax, nothing special;
--- Thanks, future you find it very useful, even though I'm not using it yet.
