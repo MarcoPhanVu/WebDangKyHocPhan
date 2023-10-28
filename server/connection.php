@@ -3,7 +3,7 @@
 	define("DB_USER", "root");
 	define("DB_PASS", "");
 	define("DB_NAME", "dkhp");
-	define("DB_PORT", "2206");
+	define("DB_PORT", "3306");
 
 	define("SITEURL", "http://localhost/wallet-manager/");
 
