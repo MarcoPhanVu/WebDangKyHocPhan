@@ -8,12 +8,23 @@
 	font-family: 'Nunito', sans-serif;
 }
 
+
+
+/* CUSTOM */
+.hidden {
+	display: none;
+}
+
+
+
+
+
 #main-container {
 	background-color: brown;
 	padding: 36px;
 	display: block;
 	height: 100vh;
-}
+} 
 
 header {
 	display: flex;
@@ -28,9 +39,13 @@ header > :nth-child(n) {
 	background-color: rgb(183, 183, 254);
 	display: flex;
 	align-items: flex-end;
-	height: 50px;
+	/* height: 50px; */
 	justify-content: center;
-	padding-bottom: 8px;
+	padding: 8px;
+}
+
+header > .home-link > a {
+	text-decoration: none;
 }
 
 header > .banner-container {
@@ -43,8 +58,9 @@ header > .auth-action {
 
 }
 
-header > .auth- > p {
+header > .auth-action > p {
 	cursor: pointer;
+	margin: auto;
 }
 
 
@@ -56,16 +72,60 @@ header > .auth- > p {
 .notYet::after {
 	content: "This feature is unavailable at the moment.";
 	position: absolute;
-	top: 40px;
-    width: 200px;
-    height: 40pxaa;
-    left: 160px;
-	width: auto;
-	height: auto;
-	/* display: none; */
-	background-color: rgba(0, 0, 0, 0.4);
+	top: 120%;
+	width: 240px;
+    left: 40%;
+	display: none;
+	color: #fff;
+	padding: 12px;
+	font-size: 14px;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 10;
 }
 
 .notYet:hover:after {
 	display: block;
 }
+
+#main-container {
+	display: flex;
+	flex-direction: row;
+	background-color: darksalmon;
+}
+
+.side-bar {
+	position: relative;
+	background-color: beige;
+	padding: 12px;
+}
+
+.side-bar > .title {
+	margin: 8px auto;
+	text-align: center;
+}
+
+.side-bar > .btn-option {
+	background-color: rgb(255, 167, 51);
+	color: #fff;
+	border: 0.5px solid #00000080;
+	margin: 4px auto;
+	padding: 8px 16px;
+	width: 100%;
+}
+
+.display-section {
+	background-color: #f2f2f2;
+	padding: 36px;
+}
+
+.displayer {
+	background-color: #d0d0d0;
+
+}
+
+.displayer.active {
+	background-color: #6579fb;
+	color: #f6fbff;
+}
+
+
