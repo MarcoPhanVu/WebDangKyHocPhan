@@ -15,5 +15,4 @@
 	} else {
 		// echo "Connection established";
 	}
-
 ?>
