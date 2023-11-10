@@ -17,6 +17,7 @@
 
         foreach ($course_list as $course) {
             $courseID = $course["courseID"];
+            $courseGroup = substr($courseID, 0, strlen($courseID) - 2);
             $courseName = $course["courseName"];
             $courseType = $course["courseType"];
             $facultyID = $course["facultyID"];
