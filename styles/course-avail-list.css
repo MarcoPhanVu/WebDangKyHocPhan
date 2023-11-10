@@ -1,0 +1,19 @@
+.course-selector {
+    position: relative;
+    width: 90%;
+    height: 80px;
+    background-color: blanchedalmond;
+    margin-bottom: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.course-selector:hover {
+    background-color: rgb(255, 211, 145);
+}
+
+.course-selector > .info-container > .main-info {
+    display: flex;
+    background-color: rgb(211, 198, 251)6, 210);
+}
