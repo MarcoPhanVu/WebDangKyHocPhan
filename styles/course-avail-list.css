@@ -1,4 +1,19 @@
-.course-selector {
+.course-selector > :nth-child(n) {
+    cursor: pointer;
+    padding: 4px 12px;
+    background-color: rgb(44, 121, 121);
+    display: inline-block;
+    color: #fff;
+    border: none;
+    margin-right: 4px;
+}
+
+
+.course-selector > :nth-child(n).selected {
+    background-color: rgb(80, 197, 113);
+}
+
+.course-option {
     position: relative;
     width: 90%;
     height: 80px;
@@ -9,11 +24,11 @@
     flex-direction: row;
 }
 
-.course-selector:hover {
+.course-option:hover {
     background-color: rgb(255, 211, 145);
 }
 
-.course-selector > .info-container > .main-info {
+.course-option > .info-container > .main-info {
     display: flex;
-    background-color: rgb(211, 198, 251)6, 210);
+    background-color: rgb(211, 198, 251);
 }

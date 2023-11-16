@@ -125,8 +125,8 @@ header > .auth-action > p {
 }
 
 .displayer.active {
-	background-color: #6579fb;
-	color: #f6fbff;
+	/* background-color: #6579fb; */
+	/* color: #f6fbff; */
 }
 
 

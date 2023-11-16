@@ -1,19 +1,4 @@
-<div class="displayer container" data-destination="registering-course">
-    <h2 class="title">This is Registering-course</h2>
-    <div class="course-selector">
-    <?php
-        $course_main_query = "SELECT * FROM dkhp.course WHERE courseID REGEXP '01$'";
-        $course_main_query_result = mysqli_query($connection, $course_main_query);
-        $course_main_list = mysqli_fetch_all($course_main_query_result, MYSQLI_NUM);
-
-        foreach ($course_main_list as $course) { // Create List of courses to choose
-            echo '<button type="button" class="course-selector-item" data-courseMain="'. substr($course[0], 0, strlen($course[0]) - 2) . '">' . substr($course[0], 0, strlen($course[0]) - 2) . '</button>';
-        }
-    ?>
-    </div>
-
-    </div>
-    <?php
+<?php
         // Get all courses
         $course_all_query = "SELECT * FROM course";
         // $course_all_query = "SELECT * FROM course WHERE courseID LIKE 'COMP13%'";
@@ -45,7 +30,3 @@
             include './pages/components/course-item.php';
         }
     ?>
-
-<!-- "DELETE FROM course WHERE `course`.`courseID` = 'COMP170103'" -->
-
-</div>
