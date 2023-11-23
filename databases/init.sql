@@ -36,10 +36,20 @@ CREATE TABLE course (
 	courseID VARCHAR(10) NOT NULL UNIQUE,
 	courseName VARCHAR(100),
 	courseType VARCHAR(100),
-	PRIMARY KEY (courseID),
-
+	creditCount INT(5) NOT NULL,
 	facultyID VARCHAR(10) NOT NULL,
 	lecturerID VARCHAR(10),
+
+    weekDay VARCHAR(20),
+    classroomID VARCHAR(10),
+    startSession INT(20),
+    endSession INT(20),
+    
+    startDate DATE,
+    endDate DATE,
+	
+	PRIMARY KEY (courseID),
+
 	CONSTRAINT fk_facultyID_crs FOREIGN KEY (facultyID) REFERENCES faculty(facultyID) ON DELETE CASCADE,
 	CONSTRAINT fk_lecturerID_crs FOREIGN KEY (lecturerID) REFERENCES lecturer(lecturerID) ON DELETE CASCADE
 );
