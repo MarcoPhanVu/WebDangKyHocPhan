@@ -10,6 +10,7 @@
 </head>
 <body>
 	<?php include "./server/connection.php"?>
+	<a href="./pages/learning.php">TO LEARNING</a>
 	<header class="row">
 		<div class="home-link">
 			<a href="./index.html"class="mb-0 fs-3 notYet">
