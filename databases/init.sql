@@ -1,5 +1,3 @@
-DROP database DKHP;
-
 CREATE DATABASE DKHP;
 USE DKHP;
 
@@ -59,4 +57,3 @@ CREATE TABLE teaches (
 	CONSTRAINT fk_lecturerID_tch FOREIGN KEY(lecturerID) REFERENCES lecturer(lecturerID) ON DELETE CASCADE,
 	CONSTRAINT fk_courseID_tch FOREIGN KEY(courseID) REFERENCES course(courseID) ON DELETE CASCADE
 );
-
