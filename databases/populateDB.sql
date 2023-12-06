@@ -1,3 +1,8 @@
+USE dkhp;
+
+DELETE FROM faculty;
+DELETE FROM lecturer;
+
 INSERT INTO faculty
 	(facultyID,	facultyName)
 VALUES
@@ -98,30 +103,31 @@ VALUES
 ;
 
 INSERT INTO student
-	(tempLoginCredential,	firstName,	lastName,				facultyID)
+	(firstName,	lastName,				facultyID)
 VALUES
-	("HK",					"Kha",		"Võ Hoàng",				"CNTT"),
-	("CT",					"Tiên",		"Lưu Thị Cẩm",			"TLH"),
-	("TV",					"Vân",		"Vũ Thị Thuý",			"TLH"),
-	("GH",					"Hân",		"Ngô Gia",				"TLH"),
-	("KA",					"Anh",		"Nguyễn Kim",			"GDCT"),
-	("HD",					"Duy",		"Cao Hoàng",			"GDTH"),
-	("CT",					"Tiên",		"Huỳnh Cẩm ",			"CNTT"),
-	("HT",					"Trân",		"Nguyễn Huyền Trân",	"GDTH"),
-	("MA",					"Anh",		"Trần Thị Minh Anh",	"GDTH"),
-	("VL",					"Linh",		"Nguyễn Văn Linh",		"CNTT"), 
-	("TD",					"Diệp",		"Cao Thị Diệp",			"GDTH"),
-	("AD",					"Dũng",		"Trần Anh",				"GDCT"),
-	("VK",					"Khang",	"Hứa Vĩ",				"CNTT"),
-	("HT",					"Thi",		"Lê Thị Hoài Thi",		"GDCT"),
-	("CY",					"Yến",		"Bùi Lê Chi Yến",		"TLH"),
-	("DH",					"Hiếu",		"Nguyễn Đức Hiếu",		"GDTH")
+	("Kha",		"Võ Hoàng",				"CNTT"),
+	("Tiên",    "Lưu Thị Cẩm",			"TLH"),
+	("Vân",		"Vũ Thị Thuý",			"TLH"),
+	("Hân",		"Ngô Gia",				"TLH"),
+	("Anh",		"Nguyễn Kim",			"GDCT"),
+	("Duy",		"Cao Hoàng",			"GDTH"),
+	("Tiên",    "Huỳnh Cẩm ",			"CNTT"),
+	("Trân",    "Nguyễn Huyền Trân",	"GDTH"),
+	("Anh",		"Trần Thị Minh Anh",	"GDTH"),
+	("Linh",    "Nguyễn Văn Linh",		"CNTT"), 
+	("Diệp",    "Cao Thị Diệp",			"GDTH"),
+	("Dũng",    "Trần Anh",				"GDCT"),
+	("Khang",	"Hứa Vĩ",				"CNTT"),
+	("Thi",		"Lê Thị Hoài Thi",		"GDCT"),
+	("Yến",		"Bùi Lê Chi Yến",		"TLH"),
+	("Hiếu",    "Nguyễn Đức Hiếu",		"GDTH")
 ;
+
+SELECT * FROM course;
 
 INSERT INTO course
 	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
 VALUES
-		-- Chung
 		-- GDQP
 	("MILI270101",	"Cơ sở chung",	1,				"GDQP",		"NDT",		4,			"LVS_D103",		1,				4,			"2022-02-15",	"2022-03-15",	"Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam"),
 	("MILI270102",	"Cơ sở chung",	1,				"GDQP",		"DVK",		4,			"LVS_D103",		1,				4,			"2022-03-22",	"2022-04-22",	"Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam"),
@@ -137,7 +143,12 @@ VALUES
 	("MILI270401",	"Cơ sở chung",	4,				"GDQP",		"DVK",		7,			"NT",			1,				6,			"2023-09-02",	"2023-10-07",	"Kỹ thuật chiến đấu và bộ binh"),
 	("MILI270402",	"Cơ sở chung",	4,				"GDQP",		"DVK",		7,			"NT",			7,				12,			"2023-09-02",	"2023-10-07",	"Kỹ thuật chiến đấu và bộ binh"),
 	("MILI270403",	"Cơ sở chung",	4,				"GDQP",		"BQT",		6,			"NT",			1,				6,			"2023-09-01",	"2023-10-06",	"Kỹ thuật chiến đấu và bộ binh"),
-	("MILI270404",	"Cơ sở chung",	4,				"GDQP",		"BQT",		6,			"NT",			7,				12,			"2023-09-01",	"2023-10-06",	"Kỹ thuật chiến đấu và bộ binh"),
+	("MILI270404",	"Cơ sở chung",	4,				"GDQP",		"BQT",		6,			"NT",			7,				12,			"2023-09-01",	"2023-10-06",	"Kỹ thuật chiến đấu và bộ binh")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- NN
 	("ENGL240101",	"Cơ sở chung",	4,				"TA",		"THQH",		2,			"LVS_A203",		2,				6,			"2022-02-13",	"2022-04-21",	"Tiếng Anh học phần I"),
 	("ENGL240102",	"Cơ sở chung",	4,				"TA",		"THQH",		2,			"LVS_A203",		8,				12,			"2022-02-13",	"2022-04-21",	"Tiếng Anh học phần I"),
@@ -160,7 +171,12 @@ VALUES
 	("CHIN240201",	"Cơ sở chung",	3,				"TT",		"VTH",		2,			"LLQ_D204",		1,				5,			"2022-09-13",	"2022-11-28",	"Tiếng Trung học phần II"),
 	("CHIN240202",	"Cơ sở chung",	3,				"TT",		"PND",		2,			"LLQ_D204",		7,				11,			"2022-09-13",	"2022-11-28",	"Tiếng Trung học phần II"),
 	("CHIN240301",	"Cơ sở chung",	3,				"TT",		"NDT",		3,			"LLQ_D204",		1,				5,			"2023-02-28",	"2023-04-18",	"Tiếng Trung học phần III"),
-	("CHIN240302",	"Cơ sở chung",	3,				"TT",		"NDT",		3,			"LLQ_D204",		1,				5,			"2023-02-28",	"2023-04-18",	"Tiếng Trung học phần III"),
+	("CHIN240302",	"Cơ sở chung",	3,				"TT",		"NDT",		3,			"LLQ_D204",		1,				5,			"2023-02-28",	"2023-04-18",	"Tiếng Trung học phần III")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- GDCT
 	("POLI190301",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		2,			"ADV_DB204",	1,				6,			"2022-02-13",	"2022-03-22",	"Pháp luật đại cương"),
 	("POLI190302",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		2,			"ADV_B204",		7,				12,			"2022-02-13",	"2022-03-22",	"Pháp luật đại cương"),
@@ -180,7 +196,12 @@ VALUES
 	("POLI200402",	"Cơ sở chung",	2,				"GDCT",		"NBK",		7,			"LLQ_D301",		7,				12,			"2023-02-27",	"2023-03-30",	"Lịch sử Đảng cộng sản Việt Nam"),
 	("POLI200403",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		6,			"LLQ_D311",		1,				6,			"2023-02-26",	"2023-03-29",	"Lịch sử Đảng cộng sản Việt Nam"),
 	("POLI200404",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		6,			"LLQ_D311",		7,				12,			"2023-02-26",	"2023-03-29",	"Lịch sử Đảng cộng sản Việt Nam"),
-	("POLI200405",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		5,			"LLQ_D312",		1,				6,			"2023-02-25",	"2023-03-28",	"Lịch sử Đảng cộng sản Việt Nam"),
+	("POLI200405",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		5,			"LLQ_D312",		1,				6,			"2023-02-25",	"2023-03-28",	"Lịch sử Đảng cộng sản Việt Nam")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- TLH
 	("PSYC100101",	"Cơ sở chung",	2,				"TLH",		"NTTX",		2,			"ADV_A303",		1,				4,			"2022-03-01",	"2022-04-20",	"Tâm lý học đại cương"),
 	("PSYC100102",	"Cơ sở chung",	2,				"TLH",		"NTTX",		2,			"ADV_A303",		7,				10,			"2022-03-01",	"2022-04-20",	"Tâm lý học đại cương"),
@@ -189,7 +210,12 @@ VALUES
 	("PSYC140001",	"Cơ sở chung",	2,				"TLH",		"DTQ",		5,			"ADV_A205",		1,				4,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục"),
 	("PSYC140002",	"Cơ sở chung",	2,				"TLH",		"DTQ",		5,			"ADV_A205",		7,				10,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục"),
 	("PSYC140003",	"Cơ sở chung",	2,				"TLH",		"DQC",		5,			"ADV_A208",		1,				4,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục"),
-	("PSYC140004",	"Cơ sở chung",	2,				"TLH",		"DQC",		5,			"ADV_A208",		7,				10,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục"),
+	("PSYC140004",	"Cơ sở chung",	2,				"TLH",		"DQC",		5,			"ADV_A208",		7,				10,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- GDTC
 	("PHYL240101",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		1,				3,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
 	("PHYL240102",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		4,				6,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
@@ -205,7 +231,12 @@ VALUES
 	("PHYL241201",	"Cơ sở chung",	1,				"GDTC",		"PTL",		6,			"ADV_SanM",		1,				3,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
 	("PHYL241202",	"Cơ sở chung",	1,				"GDTC",		"NQH",		6,			"ADV_SanM",		7,				9,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
 	("PHYL241301",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)"),
-	("PHYL241302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)"),
+	("PHYL241302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- CNTT
 	("COMP101601",	"Cơ sở ngành",	3,				"CNTT",		"NDTH",		3,			"ADV_I202",		1,				5,			"2022-02-26",	"2022-05-15",	"Cấu trúc dữ liệu"),
 	("COMP101602",	"Cơ sở ngành",	3,				"CNTT",		"NDTH",		3,			"ADV_I202",		7,				11,			"2022-02-26",	"2022-05-15",	"Cấu trúc dữ liệu"),
@@ -221,14 +252,19 @@ VALUES
 	("COMP101002",	"Cơ sở ngành",	3,				"CNTT",		"THQT",		7,			"ADV_I102",		7,				11,			"2022-03-02",	"2022-05-30",	"Lập trình cơ bản"),
 	("COMP101901",	"Cơ sở ngành",	3,				"CNTT",		"TTN",		2,			"ADV_103",		1,				6,			"2022-09-19",	"2022-11-06",	"Lập trình Windows"),
 	("COMP101902",	"Cơ sở ngành",	3,				"CNTT",		"TTN",		2,			"ADV_103",		7,				12,			"2022-09-19",	"2022-11-06",	"Lập trình Windows"),
-	("COMP101903",	"Cơ sở ngành",	3,				"CNTT",		"LTHH",		3,			"ADV_103",		1,				6,			"2022-09-20",	"2022-11-07",	"Lập trình Windows"),
---
-	("MATH100201",	"Cơ sở ngành",	3,				"CNTT",		"BTQ",		4,			"ADV_B305",		1,				5,			"2022-03-13",	"2022-05-16",	"Giải tích"),
-	("MATH100202",	"Cơ sở ngành",	3,				"CNTT",		"BTQ",		4,			"ADV_B305",		7,				11,			"2022-03-13",	"2022-05-16",	"Giải tích"),
-	("MATH110801",	"Cơ sở ngành",	3,				"CNTT",		"NDL",		5,			"ADV_B203",		1,				5,			"2022-09-04",	"2022-10-23",	"Đại số tuyến tính"),
-	("MATH110802",	"Cơ sở ngành",	3,				"CNTT",		"NDL",		6,			"ADV_B203",		1,				5,			"2022-09-05",	"2022-10-24",	"Đại số tuyến tính"),
-	("COMP150101",	"Cơ sở ngành",	3,				"CNTT",		"THH",		3,			"ADV_B305",		1,				5,			"2022-02-25",	"2022-04-02",	"Xác xuất thống kê và ứng dụng"),
-	("COMP150102",	"Cơ sở ngành",	3,				"CNTT",		"THH",		3,			"ADV_B305",		7,				11,			"2022-02-25",	"2022-04-02",	"Xác xuất thống kê và ứng dụng"),
+	("COMP101903",	"Cơ sở ngành",	3,				"CNTT",		"LTHH",		3,			"ADV_103",		1,				6,			"2022-09-20",	"2022-11-07",	"Lập trình Windows")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
+        -- CNTT
+-- 	("MATH100201",	"Cơ sở ngành",	3,				"CNTT",		"BTQ",		4,			"ADV_B305",		1,				5,			"2022-03-13",	"2022-05-16",	"Giải tích"),
+-- 	("MATH100202",	"Cơ sở ngành",	3,				"CNTT",		"BTQ",		4,			"ADV_B305",		7,				11,			"2022-03-13",	"2022-05-16",	"Giải tích"),
+-- 	("MATH110801",	"Cơ sở ngành",	3,				"CNTT",		"NDL",		5,			"ADV_B203",		1,				5,			"2022-09-04",	"2022-10-23",	"Đại số tuyến tính"),
+-- 	("MATH110802",	"Cơ sở ngành",	3,				"CNTT",		"NDL",		6,			"ADV_B203",		1,				5,			"2022-09-05",	"2022-10-24",	"Đại số tuyến tính"),
+-- 	("COMP150101",	"Cơ sở ngành",	3,				"CNTT",		"THH",		3,			"ADV_B305",		1,				5,			"2022-02-25",	"2022-04-02",	"Xác xuất thống kê và ứng dụng"),
+-- 	("COMP150102",	"Cơ sở ngành",	3,				"CNTT",		"THH",		3,			"ADV_B305",		7,				11,			"2022-02-25",	"2022-04-02",	"Xác xuất thống kê và ứng dụng"),
 	("COMP150103",	"Cơ sở ngành",	3,				"CNTT",		"NTHT",		3,			"ADV_B308",		1,				5,			"2022-02-25",	"2022-04-02",	"Xác xuất thống kê và ứng dụng"),
 	("COMP120501",	"Cơ sở ngành",	2,				"CNTT",		"LDL",		2,			"LLQ_D205",		1,				4,			"2022-02-18",	"2022-03-30",	"Phương pháp nghiên cứu khoa học"),	
 	("COMP120502",	"Cơ sở ngành",	2,				"CNTT",		"LDL",		2,			"LLQ_D205",		7,				10,			"2022-02-18",	"2022-03-30",	"Phương pháp nghiên cứu khoa học"),
@@ -239,10 +275,10 @@ VALUES
 	("COMP130702",	"Chuyên ngành",	3,				"CNTT",		"TSH",		4,			"ADV_I202",		1,				3,			"2023-09-06",	"2023-10-24",	"Kiểm thử phần mềm cơ bản"),
 	("COMP131301",	"Chuyên ngành",	3,				"CNTT",		"NHBL",		2,			"ADV_C202",		1,				5,			"2023-02-28",	"2022-04-03",	"Điện toán đám mây"),
 	("COMP131302",	"Chuyên ngành",	3,				"CNTT",		"NHBL",		2,			"ADV_C202",		7,				11,			"2023-02-28",	"2022-04-03",	"Điện toán đám mây"),
-	("COMP101101",	"Chuyên ngành",	3,				"CNTT",		"NDTN",		7,			"ADV_I102",		1,				5,			"2023-03-02",	"2022-04-23",	"Kiến trúc máy tính và hợp ngữ"),
-	("COMP101102",	"Chuyên ngành",	3,				"CNTT",		"NDTN",		7,			"ADV_I102",		7,				11,			"2023-03-02",	"2022-04-23",	"Kiến trúc máy tính và hợp ngữ"),
-	("COMP133201",	"Chuyên ngành",	3,				"CNTT",		"TDT",		5,			"ADV_B315",		1,				5,			"2023-09-06",	"2023-11-22",	"Hệ điều hành"),
-	("COMP133202",	"Chuyên ngành",	3,				"CNTT",		"TDT",		5,			"ADV_B315",		7,				11,			"2023-09-06",	"2023-11-22",	"Hệ điều hành"),
+-- 	("COMP101101",	"Chuyên ngành",	3,				"CNTT",		"NDTN",		7,			"ADV_I102",		1,				5,			"2023-03-02",	"2022-04-23",	"Kiến trúc máy tính và hợp ngữ"),
+-- 	("COMP101102",	"Chuyên ngành",	3,				"CNTT",		"NDTN",		7,			"ADV_I102",		7,				11,			"2023-03-02",	"2022-04-23",	"Kiến trúc máy tính và hợp ngữ"),
+-- 	("COMP133201",	"Chuyên ngành",	3,				"CNTT",		"TDT",		5,			"ADV_B315",		1,				5,			"2023-09-06",	"2023-11-22",	"Hệ điều hành"),
+-- 	("COMP133202",	"Chuyên ngành",	3,				"CNTT",		"TDT",		5,			"ADV_B315",		7,				11,			"2023-09-06",	"2023-11-22",	"Hệ điều hành"),
 	("COMP140101",	"Chuyên ngành",	3,				"CNTT",		"NQV",		4,			"ADV_B214",		1,				6,			"2022-09-30",	"2022-11-05",	"Phân tích thiết kế và giải thuật"),
 	("COMP140102",	"Chuyên ngành",	3,				"CNTT",		"NQV",		4,			"ADV_B214",		7,				12,			"2022-09-30",	"2022-11-05",	"Phân tích thiết kế và giải thuật"),
 	("COMP140103",	"Chuyên ngành",	3,				"CNTT",		"VTT",		3,			"ADV_B215",		1,				6,			"2022-09-29",	"2022-11-04",	"Phân tích thiết kế và giải thuật"),
@@ -254,9 +290,14 @@ VALUES
 	("COMP102402",	"Chuyên ngành",	3,				"CNTT",		"LTNK",		5,			"ADV_I102",		7,				11,			"2023-09-19",	"2023-10-30",	"Các hệ cơ sở dữ liệu"),
 	("COMP102403",	"Chuyên ngành",	3,				"CNTT",		"LMT",		4,			"ADV_I102",		1,				5,			"2023-09-18",	"2023-10-29",	"Các hệ cơ sở dữ liệu"),
 	("COMP106001",	"Chuyên ngành",	3,				"CNTT",		"VTT",		6,			"ADV_B218",		1,				3,			"2023-03-02",	"2023-04-12",	"Phân tích thiết kế hướng đối tượng"),
-	("COMP106001",	"Chuyên ngành",	3,				"CNTT",		"NVT",		6,			"ADV_B218",		4,				6,			"2023-03-02",	"2023-04-12",	"Phân tích thiết kế hướng đối tượng"),
+-- 	("COMP106001",	"Chuyên ngành",	3,				"CNTT",		"NVT",		6,			"ADV_B218",		4,				6,			"2023-03-02",	"2023-04-12",	"Phân tích thiết kế hướng đối tượng"),
 	("COMP131401",	"Chuyên ngành",	3,				"CNTT",		"LTNK",		7,			"ADV_B315",		1,				3,			"2023-09-22",	"2023-11-05",	"Trí tuệ nhân tạo"),
-	("COMP131402",	"Chuyên ngành",	3,				"CNTT",		"LTNK",		7,			"ADV_B315",		4,				6,			"2023-09-22",	"2023-11-05",	"Trí tuệ nhân tạo"),
+	("COMP131402",	"Chuyên ngành",	3,				"CNTT",		"LTNK",		7,			"ADV_B315",		4,				6,			"2023-09-22",	"2023-11-05",	"Trí tuệ nhân tạo")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- GDTH
 	("PRIM140201",	"Cơ sở ngành",	3,				"GDTH",		"TTC",		4,			"LVS_B101",		1,				4,			"2022-02-15",	"2022-03-15",	"Cơ sở tiếng Việt ở tiểu học 1"),
 	("PRIM140202",	"Cơ sở ngành",	3,				"GDTH",		"TTC",		4,			"LVS_B101",		7,				10,			"2022-02-15",	"2022-03-15",	"Cơ sở tiếng Việt ở tiểu học 1"),
@@ -298,7 +339,12 @@ VALUES
 	("PRIM175003",	"Chuyên ngành",	2,				"GDTH",		"NLTU",		3,			"LLQ_D210",		1,				4,			"2023-09-20",	"2023-11-25",	"Phát triển năng lực đọc cho học sinh tiểu học"),
 	("PRIM175101",	"Chuyên ngành",	2,				"GDTH",		"TTTT",		3,			"ADV_B210",		1,				5,			"2023-09-20",	"2023-11-25",	"Phát triển năng lực viết cho học sinh tiểu học"),
 	("PRIM175102",	"Chuyên ngành",	2,				"GDTH",		"LQC",		3,			"ADV_B210",		1,				5,			"2023-09-21",	"2023-11-27",	"Phát triển năng lực viết cho học sinh tiểu học"),
-	("PRIM175103",	"Chuyên ngành",	2,				"GDTH",		"TTTT",		3,			"ADV_B210",		7,				11,			"2023-09-21",	"2023-11-27",	"Phát triển năng lực viết cho học sinh tiểu học"),
+	("PRIM175103",	"Chuyên ngành",	2,				"GDTH",		"TTTT",		3,			"ADV_B210",		7,				11,			"2023-09-21",	"2023-11-27",	"Phát triển năng lực viết cho học sinh tiểu học")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- GDCT
 	("POLI170001",	"Cơ sở ngành",	2,				"GDCT",		"NTQT",		3,			"ADV_C701",		1,				3,			"2022-02-18",	"2022-03-30",	"Phương pháp nghiên cứu khoa học Giáo dục kinh tế và pháp luật"),
 	("POLI170002",	"Cơ sở ngành",	2,				"GDCT",		"NTQT",		3,			"ADV_C701",		4,				6,			"2022-02-18",	"2022-03-30",	"Phương pháp nghiên cứu khoa học Giáo dục kinh tế và pháp luật"),
@@ -326,7 +372,12 @@ VALUES
 	("POLI144902",	"Chuyên ngành",	2,				"GDCT",		"NHBP",		7,			"ADV_C705",		4,				6,			"2023-02-26",	"2023-03-29",	"Kinh tế quốc tế"),
 	("POLI144903",	"Chuyên ngành",	2,				"GDCT",		"NHBP",		7,			"ADV_C705",		7,				9,			"2023-02-26",	"2023-03-29",	"Kinh tế quốc tế"),
 	("POLI130701",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		6,			"LLQ_D208",		1,				4,			"2022-03-13",	"2022-05-02",	"Phương pháp và phong cách Hồ Chí Minh"),
-	("POLI130702",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		6,			"LLQ_D208",		1,				4,			"2022-03-13",	"2022-05-02",	"Phương pháp và phong cách Hồ Chí Minh"),
+	("POLI130702",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		6,			"LLQ_D208",		1,				4,			"2022-03-13",	"2022-05-02",	"Phương pháp và phong cách Hồ Chí Minh")
+;
+
+INSERT INTO course
+	(courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
 		-- TLH
 	("PSYC140101",	"Cơ sở ngành",	2,				"TLH",		"DTDD",		3,			"LLQ_D302",		2,				5,			"2022-02-16",	"2022-03-30",	"Nhập môn Tâm lý học"),
 	("PSYC140102",	"Cơ sở ngành",	2,				"TLH",		"DTDD",		3,			"LLQ_D302",		7,				10,			"2022-02-16",	"2022-03-30",	"Nhập môn Tâm lý học"),
