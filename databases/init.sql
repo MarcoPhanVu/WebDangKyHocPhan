@@ -1,4 +1,4 @@
-DROP database DKHP;
+DROP DATABASE DKHP;
 
 CREATE DATABASE DKHP;
 USE DKHP;
@@ -20,11 +20,10 @@ CREATE TABLE lecturer (
 );
 
 CREATE TABLE student (
-	studentID INT(50) NOT NULL UNIQUE AUTO_INCREMENT,
+	studentID INT(5) NOT NULL UNIQUE AUTO_INCREMENT,
 	firstName VARCHAR(100),
 	lastName VARCHAR(100),
 	PRIMARY KEY (studentID),
-	tempLoginCredential VARCHAR(100),
 
 	facultyID VARCHAR(10) NOT NULL,
 	CONSTRAINT fk_facultyID_std FOREIGN KEY (facultyID) REFERENCES faculty(facultyID) ON DELETE CASCADE
@@ -40,8 +39,8 @@ CREATE TABLE course (
 
     weekDay VARCHAR(20),
     classroomID VARCHAR(10),
-    startSession INT(20),
-    endSession INT(20),
+    startSession INT(2),
+    endSession INT(2),
     
     startDate DATE,
     endDate DATE,
@@ -59,4 +58,3 @@ CREATE TABLE teaches (
 	CONSTRAINT fk_lecturerID_tch FOREIGN KEY(lecturerID) REFERENCES lecturer(lecturerID) ON DELETE CASCADE,
 	CONSTRAINT fk_courseID_tch FOREIGN KEY(courseID) REFERENCES course(courseID) ON DELETE CASCADE
 );
-
