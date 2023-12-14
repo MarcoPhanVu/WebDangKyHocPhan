@@ -4,17 +4,17 @@ DELETE FROM faculty;
 DELETE FROM lecturer;
 
 INSERT INTO faculty
-	(facultyID,	facultyName)
+	(facultyName)
 VALUES
-	("CNTT",	"Công nghệ thông tin"),
-	("TLH",		"Tâm lý học"),
-	("GDQP",	"Giáo dục quốc phòng"),
-	("GDCT",	"Giáo dục chính trị"),
-	("TA",		"Tiếng Anh"),
-	("TP",		"Tiếng Pháp"),
-	("TT",		"Tiếng Trung"),
-	("GDTC",	"Giáo dục thể chất"),
-	("GDTH",	"Giáo dục tiểu học")
+	("Công nghệ thông tin"),
+	("Tâm lý học"),
+	("Giáo dục quốc phòng"),
+	("Giáo dục chính trị"),
+	("Tiếng Anh"),
+	("Tiếng Pháp"),
+	("Tiếng Trung"),
+	("Giáo dục thể chất"),
+	("Giáo dục tiểu học")
 ;
 
 INSERT INTO lecturer
