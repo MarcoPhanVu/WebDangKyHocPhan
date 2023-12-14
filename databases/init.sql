@@ -2,23 +2,31 @@
 -- ║ this script only me and god knows how it works, but now none of us know how it works, good luck ║ ¯\_(ツ)_/¯
 -- ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝
 
+-- ╔════════════════════════════════════════════╗
+-- ║              editable options              ║
+-- ╚════════════════════════════════════════════╝
 -- don't forget to change the database name here and......
 set @db_name            = 'user_course_registration';
+set @charset_name       = 'utf8mb4';
+set @collation_name     = 'utf8mb4_unicode_ci';
+
+-- ╔════════════════════════════════════════════╗
+-- ║ you can edit if you know what you're doing ║
+-- ╚════════════════════════════════════════════╝
 set @query_delete_db    = concat('drop   database if     exists `', @db_name, '`');
-set @query_create_db    = concat('create database if not exists `', @db_name, '`');
+set @query_create_db    = concat('create database if not exists `', @db_name, '` character set `', @charset_name, '` collate `', @collation_name, '`');
 
 prepare delete_stmt from @query_delete_db;
-prepare create_stmt from @query_create_db;
-
 execute delete_stmt;
 deallocate prepare delete_stmt;
 
+prepare create_stmt from @query_create_db;
 execute create_stmt;
 deallocate prepare create_stmt;
 
--- ╔══════════╗
--- ║ below!!! ║ ╰（‵□′）╯
--- ╚══════════╝
+-- ╔═══════════════════════════════════╗
+-- ║ change the database name below!!! ║ ╰（‵□′）╯
+-- ╚═══════════════════════════════════╝
 -- v v v v v v v v v v v v v --
 use `user_course_registration`;
 -- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ --
