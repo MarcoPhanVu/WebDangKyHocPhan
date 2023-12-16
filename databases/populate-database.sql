@@ -394,20 +394,6 @@ VALUES
 INSERT INTO course
     (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
 VALUES
-        -- TLH
-    ("PSYC100101",	"Cơ sở chung",	2,				"TLH",		"NTTX",		2,			"ADV_A303",		1,				4,			"2022-03-01",	"2022-04-20",	"Tâm lý học đại cương"),
-    ("PSYC100102",	"Cơ sở chung",	2,				"TLH",		"NTTX",		2,			"ADV_A303",		7,				10,			"2022-03-01",	"2022-04-20",	"Tâm lý học đại cương"),
-    ("PSYC100103",	"Cơ sở chung",	2,				"TLH",		"DTDD",		2,			"ADV_A304",		1,				4,			"2022-03-01",	"2022-04-20",	"Tâm lý học đại cương"),
-    ("PSYC100104",	"Cơ sở chung",	2,				"TLH",		"DTDD",		2,			"ADV_A303",		7,				10,			"2022-03-01",	"2022-04-20",	"Tâm lý học đại cương"),
-    ("PSYC140001",	"Cơ sở chung",	2,				"TLH",		"DTQ",		5,			"ADV_A205",		1,				4,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục"),
-    ("PSYC140002",	"Cơ sở chung",	2,				"TLH",		"DTQ",		5,			"ADV_A205",		7,				10,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục"),
-    ("PSYC140003",	"Cơ sở chung",	2,				"TLH",		"DQC",		5,			"ADV_A208",		1,				4,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục"),
-    ("PSYC140004",	"Cơ sở chung",	2,				"TLH",		"DQC",		5,			"ADV_A208",		7,				10,			"2022-09-26",	"2022-11-04",	"Tâm lý học giáo dục")
-;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
         -- GDTC
     ("PHYL240101",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		1,				3,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
     ("PHYL240102",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		4,				6,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
@@ -424,53 +410,6 @@ VALUES
     ("PHYL241202",	"Cơ sở chung",	1,				"GDTC",		"NQH",		6,			"ADV_SanM",		7,				9,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
     ("PHYL241301",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)"),
     ("PHYL241302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)")
-;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
-        -- GDTH
-    ("PRIM140201",	"Cơ sở ngành",	3,				"GDTH",		"TTC",		4,			"LVS_B101",		1,				4,			"2022-02-15",	"2022-03-15",	"Cơ sở tiếng Việt ở tiểu học 1"),
-    ("PRIM140202",	"Cơ sở ngành",	3,				"GDTH",		"TTC",		4,			"LVS_B101",		7,				10,			"2022-02-15",	"2022-03-15",	"Cơ sở tiếng Việt ở tiểu học 1"),
-    ("PRIM171401",	"Cơ sở ngành",	3,				"GDTH",		"LVT",		3,			"ADV_B101",		1,				4,			"2022-09-15",	"2022-11-15",	"Cơ sở tiếng Việt ở tiểu học 2"),
-    ("PRIM171402",	"Cơ sở ngành",	3,				"GDTH",		"LVT",		3,			"ADV_B101",		7,				10,			"2022-09-15",	"2022-11-15",	"Cơ sở tiếng Việt ở tiểu học 2"),
-    ("PRIM171403",	"Cơ sở ngành",	3,				"GDTH",		"NVK",		4,			"ADV_B102",		1,				4,			"2022-09-16",	"2022-11-16",	"Cơ sở tiếng Việt ở tiểu học 2"),
-    ("PRIM171501",	"Cơ sở ngành",	2,				"GDTH",		"LVT",		5,			"ADV_B201",		1,				4,			"2023-02-15",	"2022-03-26",	"Cơ sở tiếng Việt ở tiểu học 3"),
-    ("PRIM171502",	"Cơ sở ngành",	2,				"GDTH",		"DMT",		5,			"ADV_B201",		7,				10,			"2023-02-15",	"2022-03-26",	"Cơ sở tiếng Việt ở tiểu học 3"),
-    ("PRIM172001",	"Cơ sở ngành",	4,				"GDTH",		"DNH",		2,			"LVS_103",		2,				6,			"2022-02-20",	"2022-04-29",	"Cơ sở Toán ở tiểu học 1"),
-    ("PRIM172002",	"Cơ sở ngành",	4,				"GDTH",		"DNH",		2,			"LVS_103",		7,				12,			"2022-02-20",	"2022-04-29",	"Cơ sở Toán ở tiểu học 1"),
-    ("PRIM172101",	"Cơ sở ngành",	4,				"GDTH",		"TTD",		3,			"LVS_102",		2,				6,			"2022-09-20",	"2022-11-29",	"Cơ sở Toán ở tiểu học 2"),
-    ("PRIM172102",	"Cơ sở ngành",	4,				"GDTH",		"TTD",		3,			"LVS_102",		2,				6,			"2022-09-20",	"2022-11-29",	"Cơ sở Toán ở tiểu học 2"),
-    ("PRIM170801",	"Cơ sở ngành",	3,				"GDTH",		"LQN",		5,			"ADV_A305",		4,				6,			"2022-03-14",	"2022-05-03",	"Khoa học về sự sống ở tiểu học"),
-    ("PRIM170802",	"Cơ sở ngành",	3,				"GDTH",		"LQN",		5,			"ADV_A305",		1,				3,			"2022-03-14",	"2022-05-03",	"Khoa học về sự sống ở tiểu học"),
-    ("PRIM171001",	"Cơ sở ngành",	3,				"GDTH",		"CTKN",		4,			"ADV_A305",		4,				6,			"2022-03-13",	"2022-05-02",	"Khoa học về xã hội ở tiểu học"),
-    ("PRIM171002",	"Cơ sở ngành",	3,				"GDTH",		"CTKN",		4,			"ADV_A305",		4,				6,			"2022-03-13",	"2022-05-02",	"Khoa học về xã hội ở tiểu học"),
-    ("PRIM174301",	"Cơ sở ngành",	2,				"GDTH",		"LTNA",		7,			"ADV_A113",		1,				3,			"2022-02-20",	"2022-04-03",	"Lịch sử giáo dục tiểu học"),
-    ("PRIM174302",	"Cơ sở ngành",	2,				"GDTH",		"LTNA",		7,			"ADV_A113",		4,				6,			"2022-02-20",	"2022-04-03",	"Lịch sử giáo dục tiểu học"),
-    ("PRIM170101",	"Chuyên ngành",	3,				"GDTH",		"TTD",		3,			"ADV_B205",		1,				4,			"2022-03-02",	"2022-05-24",	"Cơ sở tâm lí học của hoạt động giáo dục ở tiểu học"),
-    ("PRIM170102",	"Chuyên ngành",	3,				"GDTH",		"TTD",		3,			"ADV_B205",		7,				10,			"2022-03-02",	"2022-05-24",	"Cơ sở tâm lí học của hoạt động giáo dục ở tiểu học"),
-    ("PRIM170103",	"Chuyên ngành",	3,				"GDTH",		"TTD",		6,			"ADV_B206",		1,				4,			"2022-03-05",	"2022-05-27",	"Cơ sở tâm lí học của hoạt động giáo dục ở tiểu học"),
-    ("PRIM170201",	"Chuyên ngành",	4,				"GDTH",		"LNTD",		4,			"ADV_A202",		1,				3,			"2022-09-10",	"2022-11-05",	"Khoa học sư phạm ở tiểu học 1"),
-    ("PRIM170202",	"Chuyên ngành",	4,				"GDTH",		"LNTD",		4,			"ADV_A202",		4,				6,			"2022-09-10",	"2022-11-05",	"Khoa học sư phạm ở tiểu học 1"),
-    ("PRIM170301",	"Chuyên ngành",	4,				"GDTH",		"LPT",		6,			"ADV_A202",		1,				3,			"2023-03-10",	"2023-05-25",	"Khoa học sư phạm ở tiểu học 2"),
-    ("PRIM170302",	"Chuyên ngành",	4,				"GDTH",		"LPT",		6,			"ADV_A202",		4,				6,			"2023-03-10",	"2023-05-25",	"Khoa học sư phạm ở tiểu học 2"),
-    ("PRIM171801",	"Chuyên ngành",	4,				"GDTH",		"TTKT",		2,			"LVS_B101",		1,				6,			"2022-09-04",	"2022-10-23",	"Lý luận dạy học Tiếng Việt ở tiểu học 1"),
-    ("PRIM171802",	"Chuyên ngành",	4,				"GDTH",		"TTKT",		2,			"LVS_B101",		7,				12,			"2022-09-04",	"2022-10-23",	"Lý luận dạy học Tiếng Việt ở tiểu học 1"),
-    ("PRIM171901",	"Chuyên ngành",	4,				"GDTH",		"PPA",		3,			"LVS_B101",		1,				6,			"2023-03-04",	"2023-04-23",	"Lý luận dạy học Tiếng Việt ở tiểu học 2"),
-    ("PRIM171902",	"Chuyên ngành",	4,				"GDTH",		"PPA",		3,			"LVS_B101",		1,				6,			"2023-03-04",	"2023-04-23",	"Lý luận dạy học Tiếng Việt ở tiểu học 2"),
-    ("PRIM172201",	"Chuyên ngành",	4,				"GDTH",		"NDN",		5,			"ADV_B215",		1,				5,			"2022-03-14",	"2022-05-04",	"Lý luận dạy học Toán ở tiểu học"),
-    ("PRIM172202",	"Chuyên ngành",	4,				"GDTH",		"NDN",		5,			"ADV_B215",		7,				11,			"2022-03-14",	"2022-05-04",	"Lý luận dạy học Toán ở tiểu học"),
-    ("PRIM171101",	"Chuyên ngành",	4,				"GDTH",		"LQC",		6,			"ADV_A301",		1,				5,			"2022-02-16",	"2022-05-25",	"Lý luận dạy học Tự nhiên - Xã hội"),
-    ("PRIM171102",	"Chuyên ngành",	4,				"GDTH",		"LQC",		6,			"ADV_A301",		7,				11,			"2022-02-16",	"2022-05-25",	"Lý luận dạy học Tự nhiên - Xã hội"),
-    ("PRIM171103",	"Chuyên ngành",	4,				"GDTH",		"PPA",		7,			"ADV_A305",		1,				5,			"2022-02-17",	"2022-05-26",	"Lý luận dạy học Tự nhiên - Xã hội"),
-    ("PRIM171201",	"Chuyên ngành",	2,				"GDTH",		"NDN",		4,			"ADV_B213",		2,				6,			"2023-03-10",	"2023-04-30",	"Phương pháp dạy học Đạo đức"),
-    ("PRIM171202",	"Chuyên ngành",	2,				"GDTH",		"NDN",		4,			"ADV_B213",		7,				12,			"2023-03-10",	"2023-04-30",	"Phương pháp dạy học Đạo đức"),
-    ("PRIM175001",	"Chuyên ngành",	2,				"GDTH",		"NLTU",		3,			"LLQ_D209",		1,				4,			"2023-03-20",	"2023-04-25",	"Phát triển năng lực đọc cho học sinh tiểu học"),
-    ("PRIM175002",	"Chuyên ngành",	2,				"GDTH",		"NLTU",		3,			"LLQ_D209",		7,				10,			"2023-03-20",	"2023-04-25",	"Phát triển năng lực đọc cho học sinh tiểu học"),
-    ("PRIM175003",	"Chuyên ngành",	2,				"GDTH",		"NLTU",		3,			"LLQ_D210",		1,				4,			"2023-09-20",	"2023-11-25",	"Phát triển năng lực đọc cho học sinh tiểu học"),
-    ("PRIM175101",	"Chuyên ngành",	2,				"GDTH",		"TTTT",		3,			"ADV_B210",		1,				5,			"2023-09-20",	"2023-11-25",	"Phát triển năng lực viết cho học sinh tiểu học"),
-    ("PRIM175102",	"Chuyên ngành",	2,				"GDTH",		"LQC",		3,			"ADV_B210",		1,				5,			"2023-09-21",	"2023-11-27",	"Phát triển năng lực viết cho học sinh tiểu học"),
-    ("PRIM175103",	"Chuyên ngành",	2,				"GDTH",		"TTTT",		3,			"ADV_B210",		7,				11,			"2023-09-21",	"2023-11-27",	"Phát triển năng lực viết cho học sinh tiểu học")
 ;
 
 INSERT INTO course
@@ -504,49 +443,6 @@ VALUES
     ("POLI144903",	"Chuyên ngành",	2,				"GDCT",		"NHBP",		7,			"ADV_C705",		7,				9,			"2023-02-26",	"2023-03-29",	"Kinh tế quốc tế"),
     ("POLI130701",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		6,			"LLQ_D208",		1,				4,			"2022-03-13",	"2022-05-02",	"Phương pháp và phong cách Hồ Chí Minh"),
     ("POLI130702",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		6,			"LLQ_D208",		1,				4,			"2022-03-13",	"2022-05-02",	"Phương pháp và phong cách Hồ Chí Minh")
-;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
-        -- TLH
-    ("PSYC140101",	"Cơ sở ngành",	2,				"TLH",		"DTDD",		3,			"LLQ_D302",		2,				5,			"2022-02-16",	"2022-03-30",	"Nhập môn Tâm lý học"),
-    ("PSYC140102",	"Cơ sở ngành",	2,				"TLH",		"DTDD",		3,			"LLQ_D302",		7,				10,			"2022-02-16",	"2022-03-30",	"Nhập môn Tâm lý học"),
-    ("PSYC140103",	"Cơ sở ngành",	2,				"TLH",		"PMPT",		3,			"LLQ_D102",		2,				5,			"2022-02-16",	"2022-03-30",	"Nhập môn Tâm lý học"),
-    ("PSYC170301",	"Cơ sở ngành",	5,				"TLH",		"PMPT",		4,			"LLQ_D203",		1,				6,			"2022-02-13",	"2022-04-23",	"Tâm lý học căn bản"),
-    ("PSYC170302",	"Cơ sở ngành",	5,				"TLH",		"HNT",		4,			"LLQ_D303",		1,				6,			"2022-02-13",	"2022-04-23",	"Tâm lý học căn bản"),
-    ("PSYC176001",	"Cơ sở ngành",	4,				"TLH",		"NTTX",		2,			"ADV_A305",		1,				4,			"2022-03-31",	"2022-05-19",	"Tâm lý học phát triển 1"),
-    ("PSYC176002",	"Cơ sở ngành",	4,				"TLH",		"NTTX",		2,			"ADV_A305",		7,				10,			"2022-03-31",	"2022-05-19",	"Tâm lý học phát triển 1"),
-    ("PSYC109801",	"Cơ sở ngành",	3,				"TLH",		"DQC",		3,			"ADV_A305",		1,				4,			"2022-03-30",	"2022-05-18",	"Tâm lý học phát triển 2"),
-    ("PSYC109802",	"Cơ sở ngành",	3,				"TLH",		"DQC",		3,			"ADV_A305",		7,				11,			"2022-03-30",	"2022-05-18",	"Tâm lý học phát triển 2"),
-    ("PSYC103501",	"Cơ sở ngành",	3,				"TLH",		"DTQ",		4,			"LLQ_303",		1,				3,			"2022-02-20",	"2022-04-02",	"Tâm lý học giới tính"),
-    ("PSYC103502",	"Cơ sở ngành",	3,				"TLH",		"DTQ",		4,			"LLQ_303",		4,				6,			"2022-02-20",	"2022-04-02",	"Tâm lý học giới tính"),
-    ("PSYC103601",	"Cơ sở ngành",	2,				"TLH",		"VTTV",		5,			"ADV_A313",		1,				3,			"2022-04-01",	"2022-05-06",	"Tâm lý học gia đình"),
-    ("PSYC103602",	"Cơ sở ngành",	2,				"TLH",		"VTT",		5,			"ADV_A310",		1,				3,			"2022-04-01",	"2022-05-06",	"Tâm lý học gia đình"),
-    ("PSYC176101",	"Cơ sở ngành",	3,				"TLH",		"KTTT",		7,			"LVS_D112",		1,				4,			"2022-02-12",	"2022-03-22",	"Tâm lý học xã hội"),
-    ("PSYC176102",	"Cơ sở ngành",	3,				"TLH",		"KTTT",		7,			"LVS_D112",		7,				10,			"2022-02-12",	"2022-03-22",	"Tâm lý học xã hội"),
-    ("PSYC171901",	"Cơ sở ngành",	4,				"TLH",		"HTHD",		6,			"LVS_D107",		1,				5,			"2022-09-04",	"2022-10-23",	"Tâm lý học giao tiếp"),
-    ("PSYC171902",	"Cơ sở ngành",	4,				"TLH",		"HTHD",		6,			"LVS_D107",		7,				11,			"2022-09-04",	"2022-10-23",	"Tâm lý học giao tiếp"),
-    ("PSYC121701",	"Cơ sở ngành",	3,				"TLH",		"HNT",		5,			"ADV_B306",		1,				4,			"2022-09-20",	"2022-11-05",	"Tâm lý học dạy học và giáo dục"),
-    ("PSYC121702",	"Cơ sở ngành",	3,				"TLH",		"HNT",		5,			"ADV_B306",		7,				10,			"2022-09-20",	"2022-11-05",	"Tâm lý học dạy học và giáo dục"),
-    ("PSYC170501",	"Chuyên ngành",	3,				"TLH",		"NTTX",		4,			"ADV_B202",		1,				5,			"2022-10-28",	"2022-12-02",	"Tham vấn và trị liệu tâm lý cơ bản"),
-    ("PSYC170502",	"Chuyên ngành",	3,				"TLH",		"NTTX",		4,			"ADV_B202",		7,				11,			"2022-10-28",	"2022-12-02",	"Tham vấn và trị liệu tâm lý cơ bản"),
-    ("PSYC170701",	"Chuyên ngành",	3,				"TLH",		"VTTV",		6,			"ADV_B302",		1,				5,			"2022-10-18",	"2022-11-29",	"Kỹ năng tham vấn và trị liệu tâm lý"),
-    ("PSYC170701",	"Chuyên ngành",	3,				"TLH",		"VTTV",		6,			"ADV_B302",		7,				11,			"2022-10-18",	"2022-11-29",	"Kỹ năng tham vấn và trị liệu tâm lý"),
-    ("PSYC176201",	"Chuyên ngành",	3,				"TLH",		"HTHD",		2,			"LLQ_D110",		1,				4,			"2023-02-23",	"2023-04-03",	"Tâm bệnh học"),
-    ("PSYC176202",	"Chuyên ngành",	3,				"TLH",		"HTHD",		2,			"LLQ_D110",		7,				10,			"2023-02-23",	"2023-04-03",	"Tâm bệnh học"),
-    ("PSYC174301",	"Chuyên ngành",	4,				"TLH",		"NTT",		3,			"LLQ_D309",		2,				6,			"2023-03-10",	"2023-05-23",	"Giáo dục kỹ năng sống"),
-    ("PSYC174302",	"Chuyên ngành",	4,				"TLH",		"NTT",		3,			"LLQ_D309",		7,				11,			"2023-03-10",	"2023-05-23",	"Giáo dục kỹ năng sống"),
-    ("PSYC103101",	"Chuyên ngành",	2,				"TLH",		"GTV",		6,			"ADV_C605",		1,				5,			"2023-03-30",	"2023-05-19",	"Tâm lý học quản lý"),
-    ("PSYC103102",	"Chuyên ngành",	2,				"TLH",		"GTV",		6,			"ADV_C605",		7,				11,			"2023-03-30",	"2023-05-19",	"Tâm lý học quản lý"),
-    ("PSYC103103",	"Chuyên ngành",	2,				"TLH",		"GTV",		5,			"ADV_C605",		1,				5,			"2023-03-29",	"2023-05-18",	"Tâm lý học quản lý"),
-    ("PSYC171201",	"Chuyên ngành",	4,				"TLH",		"TTTM",		4,			"ADV_B318",		1,				6,			"2023-09-23",	"2023-11-23",	"Tâm lý lâm sàng"),
-    ("PSYC171202",	"Chuyên ngành",	4,				"TLH",		"TTTM",		4,			"ADV_B318",		7,				12,			"2023-09-23",	"2023-11-23",	"Tâm lý lâm sàng"),
-    ("PSYC171203",	"Chuyên ngành",	4,				"TLH",		"NTT",		6,			"ADV_B318",		1,				6,			"2023-09-25",	"2023-11-25",	"Tâm lý lâm sàng"),
-    ("PSYC145201",	"Chuyên ngành",	3,				"TLH",		"NTTX",		5,			"ADV_C710",		1,				5,			"2023-10-03",	"2023-12-13",	"Tham vấn học đường"),
-    ("PSYC145202",	"Chuyên ngành",	3,				"TLH",		"NTTX",		5,			"ADV_C710",		7,				11,			"2023-10-03",	"2023-12-13",	"Tham vấn học đường"),
-    ("PSYC176301",	"Chuyên ngành",	3,				"TLH",		"HNT",		6,			"ADV_B210",		1,				5,			"2023-10-12",	"2023-12-13",	"Tâm lý học hành vi lệch chuẩn"),
-    ("PSYC176302",	"Chuyên ngành",	3,				"TLH",		"HNT",		6,			"ADV_C710",		7,				11,			"2023-10-12",	"2023-12-13",	"Tâm lý học hành vi lệch chuẩn")
 ;
 
 insert into class
