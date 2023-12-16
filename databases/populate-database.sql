@@ -9,30 +9,30 @@ delete from class;
 delete from registration_results;
 
 insert into faculty
-    (name)
+    (id,    name)
 values
-    ("Công nghệ thông tin"),
-    ("Địa lý"),
-    ("Giáo dục chính trị"),
-    ("Giáo dục đặc biệt"),
-    ("Giáo dục Mầm non"),
-    ("Giáo dục Quốc phòng"),
-    ("Giáo dục Tiểu học"),
-    ("Giáo dục Thể chất"),
-    ("Hóa học"),
-    ("Khoa học Giáo dục"),
-    ("Lịch sử"),
-    ("Ngữ Văn"),
-    ("Sinh học"),
-    ("Tâm lý học"),
-    ("Toán - Tin học"),
-    ("tiếng Anh"),
-    ("tiếng Hàn quốc"),
-    ("tiếng Nga"),
-    ("tiếng Nhật"),
-    ("tiếng Pháp"),
-    ("tiếng Trung"),
-    ("Vật lý")
+    (1,     "Công nghệ thông tin"),
+    (2,     "Địa lý"),
+    (3,     "Giáo dục chính trị"),
+    (4,     "Giáo dục đặc biệt"),
+    (5,     "Giáo dục Mầm non"),
+    (6,     "Giáo dục Quốc phòng"),
+    (7,     "Giáo dục Tiểu học"),
+    (8,     "Giáo dục Thể chất"),
+    (9,     "Hóa học"),
+    (10,    "Khoa học Giáo dục"),
+    (11,    "Lịch sử"),
+    (12,    "Ngữ Văn"),
+    (13,    "Sinh học"),
+    (14,    "Tâm lý học"),
+    (15,    "Toán - Tin học"),
+    (16,    "tiếng Anh"),
+    (17,    "tiếng Hàn quốc"),
+    (18,    "tiếng Nga"),
+    (19,    "tiếng Nhật"),
+    (20,    "tiếng Pháp"),
+    (21,    "tiếng Trung"),
+    (22,    "Vật lý")
 ;
 
 insert into course
@@ -64,7 +64,7 @@ values
     -- Toán - Tin học
     (1,      2,                  15,            "Toán rời rạc"),
     -- tiếng Anh
-    (0,      4,                  16,            "Tiếng Anh học phần I"),
+    (0,      4,                  16,            "Tiếng Anh học phần I")
     -- tiếng Hàn quốc
     -- tiếng Nga
     -- tiếng Nhật
@@ -78,38 +78,40 @@ insert into classroom
 values
 -- building A
     -- floor 2
-    ("ADV",     "A",        2,      2),     ("ADV",     "A",        2,      2),     ("ADV",     "A",        2,      3),     ("ADV",     "A",        2,      4),     ("ADV",     "A",        2,      5),
+    ("ADV",     "A",        2,      1),     ("ADV",     "A",        2,      2),     ("ADV",     "A",        2,      3),     ("ADV",     "A",        2,      4),     ("ADV",     "A",        2,      5),
     ("ADV",     "A",        2,      6),     ("ADV",     "A",        2,      7),     ("ADV",     "A",        2,      8),     ("ADV",     "A",        2,      9),     ("ADV",     "A",        2,      10),
     -- floor 3
-    ("ADV",     "A",        3,      2),     ("ADV",     "A",        3,      2),     ("ADV",     "A",        3,      3),     ("ADV",     "A",        3,      4),     ("ADV",     "A",        3,      5),
+    ("ADV",     "A",        3,      1),     ("ADV",     "A",        3,      2),     ("ADV",     "A",        3,      3),     ("ADV",     "A",        3,      4),     ("ADV",     "A",        3,      5),
     ("ADV",     "A",        3,      6),     ("ADV",     "A",        3,      7),     ("ADV",     "A",        3,      8),     ("ADV",     "A",        3,      9),     ("ADV",     "A",        3,      10),
     -- floor 4
-    ("ADV",     "A",        4,      2),     ("ADV",     "A",        4,      2),     ("ADV",     "A",        4,      3),     ("ADV",     "A",        4,      4),     ("ADV",     "A",        4,      5),
+    ("ADV",     "A",        4,      1),     ("ADV",     "A",        4,      2),     ("ADV",     "A",        4,      3),     ("ADV",     "A",        4,      4),     ("ADV",     "A",        4,      5),
     ("ADV",     "A",        4,      6),     ("ADV",     "A",        4,      7),     ("ADV",     "A",        4,      8),     ("ADV",     "A",        4,      9),     ("ADV",     "A",        4,      10),
     -- floor 5
-    ("ADV",     "A",        5,      2),     ("ADV",     "A",        5,      2),     ("ADV",     "A",        5,      3),     ("ADV",     "A",        5,      4),     ("ADV",     "A",        5,      5),
+    ("ADV",     "A",        5,      1),     ("ADV",     "A",        5,      2),     ("ADV",     "A",        5,      3),     ("ADV",     "A",        5,      4),     ("ADV",     "A",        5,      5),
     ("ADV",     "A",        5,      6),     ("ADV",     "A",        5,      7),     ("ADV",     "A",        5,      8),     ("ADV",     "A",        5,      9),     ("ADV",     "A",        5,      10),
     -- floor 6
-    ("ADV",     "A",        6,      2),     ("ADV",     "A",        6,      2),     ("ADV",     "A",        6,      3),     ("ADV",     "A",        6,      4),     ("ADV",     "A",        6,      5),
+    ("ADV",     "A",        6,      1),     ("ADV",     "A",        6,      2),     ("ADV",     "A",        6,      3),     ("ADV",     "A",        6,      4),     ("ADV",     "A",        6,      5),
     ("ADV",     "A",        6,      6),     ("ADV",     "A",        6,      7),     ("ADV",     "A",        6,      8),     ("ADV",     "A",        6,      9),     ("ADV",     "A",        6,      10),
 
 -- building B
     -- floor 2
-    ("ADV",     "B",        2,      2),     ("ADV",     "B",        2,      2),     ("ADV",     "B",        2,      3),     ("ADV",     "B",        2,      4),     ("ADV",     "B",        2,      5),
+    ("ADV",     "B",        2,      1),     ("ADV",     "B",        2,      2),     ("ADV",     "B",        2,      3),     ("ADV",     "B",        2,      4),     ("ADV",     "B",        2,      5),
     ("ADV",     "B",        2,      6),     ("ADV",     "B",        2,      7),     ("ADV",     "B",        2,      8),     ("ADV",     "B",        2,      9),     ("ADV",     "B",        2,      10),
     ("ADV",     "B",        2,      11),    ("ADV",     "B",        2,      12),    ("ADV",     "B",        2,      13),    ("ADV",     "B",        2,      14),    ("ADV",     "B",        2,      15),
+    ("ADV",     "B",        2,      16),    ("ADV",     "B",        2,      17),    ("ADV",     "B",        2,      18),    ("ADV",     "B",        2,      19),    ("ADV",     "B",        2,      20),
     -- floor 3
     ("ADV",     "B",        3,      1),     ("ADV",     "B",        3,      2),     ("ADV",     "B",        3,      3),     ("ADV",     "B",        3,      4),     ("ADV",     "B",        3,      5),
     ("ADV",     "B",        3,      6),     ("ADV",     "B",        3,      7),     ("ADV",     "B",        3,      8),     ("ADV",     "B",        3,      9),     ("ADV",     "B",        3,      10),
     ("ADV",     "B",        3,      11),    ("ADV",     "B",        3,      12),    ("ADV",     "B",        3,      13),    ("ADV",     "B",        3,      14),    ("ADV",     "B",        3,      15),
+    ("ADV",     "B",        3,      16),    ("ADV",     "B",        3,      17),    ("ADV",     "B",        3,      18),    ("ADV",     "B",        3,      19),    ("ADV",     "B",        3,      20),
 
 -- building C
     -- floor 2
-    ("ADV",     "C",        2,      2),     ("ADV",     "C",        2,      2),     ("ADV",     "C",        2,      3),     ("ADV",     "C",        2,      4),     ("ADV",     "C",        2,      5),
+    ("ADV",     "C",        2,      1),     ("ADV",     "C",        2,      2),     ("ADV",     "C",        2,      3),     ("ADV",     "C",        2,      4),     ("ADV",     "C",        2,      5),
     ("ADV",     "C",        2,      6),     ("ADV",     "C",        2,      7),     ("ADV",     "C",        2,      8),     ("ADV",     "C",        2,      9),     ("ADV",     "C",        2,      10),
     -- floor 3
-    ("ADV",     "C",        3,      2),     ("ADV",     "C",        3,      2),     ("ADV",     "C",        3,      3),     ("ADV",     "C",        3,      4),     ("ADV",     "C",        3,      5),
-    ("ADV",     "C",        3,      6),     ("ADV",     "C",        3,      7),     ("ADV",     "C",        3,      8),     ("ADV",     "C",        3,      9),     ("ADV",     "C",        3,      10),
+    ("ADV",     "C",        3,      1),     ("ADV",     "C",        3,      2),     ("ADV",     "C",        3,      3),     ("ADV",     "C",        3,      4),     ("ADV",     "C",        3,      5),
+    ("ADV",     "C",        3,      6),     ("ADV",     "C",        3,      7),     ("ADV",     "C",        3,      8),     ("ADV",     "C",        3,      9),     ("ADV",     "C",        3,      10)
 ;
 
 INSERT INTO course
@@ -548,6 +550,6 @@ VALUES
 ;
 
 insert into class
-    (name, days_of_week, start_session, end_session, start_date, end_date, lecturer_id, course_id, classroom_id)
+    (days_of_week, start_session, end_session, start_date, end_date, lecturer_id, course_id, classroom_id)
 values
     ()

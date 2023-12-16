@@ -42,15 +42,6 @@ create table faculty (
     primary key (id)
 );
 
-create table course (
-    id                  int unsigned        not null    auto_increment,
-    name                varchar(100),
-    number_of_credits   bit(3),
-    type                bit(2), -- 2 chuyên ngành, 1 cơ sở ngành, 0 cơ sở chung
-    
-    primary key (id)
-);
-
 create table classroom (
     id                  int unsigned        not null    auto_increment,
     address             varchar(100),
@@ -62,6 +53,17 @@ create table classroom (
 );
 
 -- has a foreign key ----------------------------
+create table course (
+    id                  int unsigned        not null    auto_increment,
+    name                varchar(100),
+    number_of_credits   bit(3),
+    type                bit(2), -- 2 chuyên ngành, 1 cơ sở ngành, 0 cơ sở chung
+
+    faculty_id          int unsigned        not null,
+
+    primary key (id)
+);
+
 create table lecturer (
     id                  int unsigned        not null    auto_increment,
     name                varchar(100),
@@ -83,7 +85,6 @@ create table student (
 
 create table class (
     id                  int unsigned        not null    auto_increment,
-    name                varchar(100),
     days_of_week        bit(3),
     start_session       tinyint(2) unsigned,
     end_session         tinyint(2) unsigned,  
@@ -108,6 +109,7 @@ create table registration_results (
 );
 
 -- add foreign key --------------------------------------------------------------------------------
+alter table course                  add constraint fk_course_faculty                foreign key (faculty_id)    references faculty(id)      on delete cascade;
 alter table lecturer                add constraint fk_lecturer_faculty              foreign key (faculty_id)    references faculty(id)      on delete cascade;
 alter table student                 add constraint fk_student_faculty               foreign key (faculty_id)    references faculty(id)      on delete cascade;
 alter table class                   add constraint fk_class_lecturer                foreign key (lecturer_id)   references lecturer(id)     on delete cascade;
