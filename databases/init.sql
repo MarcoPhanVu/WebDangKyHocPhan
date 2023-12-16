@@ -46,7 +46,7 @@ create table course (
     id                  int unsigned        not null    auto_increment,
     name                varchar(100),
     number_of_credits   bit(3),
-    type                bit, -- 1 chuyên ngành, 0 cơ sơ ngành
+    type                bit(2), -- 2 chuyên ngành, 1 cơ sở ngành, 0 cơ sở chung
     
     primary key (id)
 );
@@ -54,8 +54,9 @@ create table course (
 create table classroom (
     id                  int unsigned        not null    auto_increment,
     address             varchar(100),
+    building            char(1),
     floor               tinyint unsigned,
-    building            varchar(1),
+    room                tinyint unsigned,
     
     primary key (id)
 );
