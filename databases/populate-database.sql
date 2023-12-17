@@ -1,5 +1,15 @@
 use user_course_registration;
 
+set foreign_key_checks = 0;
+truncate table faculty;
+truncate table course;
+truncate table classroom;
+truncate table lecturer;
+truncate table student;
+truncate table class;
+truncate table registration_results;
+set foreign_key_checks = 1;
+
 insert into faculty
     (name)
 values
@@ -150,6 +160,7 @@ values
     (1,      3,                  15,            "Đại số tuyến tính"),
     (1,      3,                  15,            "Giải tích 1"),
     (1,      2,                  15,            "Toán rời rạc"),
+    (1,      3,                  15,            "Xác suất thống kê và ứng dụng"),
     -- tiếng Anh
     (0,      4,                  16,            "Tiếng Anh học phần I"),
 	(0,      3,                  16,            "Tiếng Anh học phần II"),
@@ -215,57 +226,131 @@ values
 -- where building = "i";
 
 insert into class
-    (days_of_week,  start_session,  end_session,    start_date,     end_date,       lecturer_id,    course_id,  classroom_id)
+    (start_session, end_session,    start_date,     end_date,       lecturer_id,    course_id,  classroom_id)
 values
 -- Công nghệ thông tin
-    (3,             1,              5,              "2022-02-26",   "2022-05-15",   ,               7,          117),
-    (3,             7,              11,             "2022-02-26",   "2022-05-15",   ,               7,          117),
-    (3,             1,              6,              "2022-02-26",   "2022-05-15",   ,               37,         117),
-    (3,             7,              12,             "2022-02-26",   "2022-05-15",   ,               37,         117),
-    (4,             1,              6,              "2022-02-16",   "2022-05-25",   ,               59,         116),
-    (5,             7,              12,             "2022-02-17",   "2022-05-26",   ,               59,         116),
-    (2,             1,              6,              "2022-02-16",   "2022-05-25",   ,               44,         118),
-    (2,             7,              12,             "2022-02-16",   "2022-05-25",   ,               44,         118),
-    (7,             1,              5,              "2022-03-02",   "2022-05-30",   ,               36,         112),
-    (7,             7,              11,             "2022-03-02",   "2022-05-30",   ,               36,         112),
-    (2,             1,              6,              "2022-09-19",   "2022-11-06",   ,               41,         113),
-    (2,             7,              12,             "2022-09-19",   "2022-11-06",   ,               41,         113),
-    (3,             1,              6,              "2022-09-20",   "2022-11-07",   ,               41,         113),
-    (6,             1,              5,              "2022-03-14",   "2022-05-04",   ,               "Toán rời rạc",                 44),
-    (6,             7,              11,             "2022-03-14",   "2022-05-04",   ,               "Toán rời rạc",                 44),
-    (4,             1,              5,              "2022-03-13",   "2022-05-16",   ,               "Giải tích",                85),
-    (4,             7,              11,             "2022-03-13",   "2022-05-16",   ,               "Giải tích",                85),
-    (5,             1,              5,              "2022-09-04",   "2022-10-23",   ,               "Đại số tuyến tính",                63),
-    (6,             1,              5,              "2022-09-05",   "2022-10-24",   ,               "Đại số tuyến tính",                63),
-    (3,             1,              5,              "2022-02-25",   "2022-04-02",   ,               "Xác xuất thống kê và ứng dụng",                85),
-    (3,             7,              11,             "2022-02-25",   "2022-04-02",   ,               "Xác xuất thống kê và ứng dụng",                85),
-    (3,             1,              5,              "2022-02-25",   "2022-04-02",   ,               "Xác xuất thống kê và ứng dụng",                88),
-    (2,             1,              4,              "2022-02-18",   "2022-03-30",   ,               "Phương pháp nghiên cứu khoa học",              105),	
-    (2,             7,              10,             "2022-02-18",   "2022-03-30",   ,               "Phương pháp nghiên cứu khoa học",              105),
-    (6,             2,              6,              "2023-09-09",   "2022-10-24",   ,               "Công nghệ NET",                113),
-    (5,             1,              5,              "2023-09-08",   "2022-10-23",   ,               "Công nghệ NET",                113),
-    (4,             7,              9,              "2023-09-06",   "2023-10-24",   ,               "Kiểm thử phần mềm cơ bản",             117),
-    (4,             1,              3,              "2023-09-06",   "2023-10-24",   ,               "Kiểm thử phần mềm cơ bản",             117),
-    (2,             1,              5,              "2023-02-28",   "2022-04-03",   ,               "Điện toán đám mây",                102),
-    (2,             7,              11,             "2023-02-28",   "2022-04-03",   ,               "Điện toán đám mây",                102),
-    (7,             1,              5,              "2023-03-02",   "2022-04-23",   ,               "Kiến trúc máy tính và hợp ngữ",                112),
-    (7,             7,              11,             "2023-03-02",   "2022-04-23",   ,               "Kiến trúc máy tính và hợp ngữ",                112),
-    (5,             1,              5,              "2023-09-06",   "2023-11-22",   ,               "Hệ điều hành",             95),
-    (5,             7,              11,             "2023-09-06",   "2023-11-22",   ,               "Hệ điều hành",             95),
-    (4,             1,              6,              "2022-09-30",   "2022-11-05",   ,               "Phân tích thiết kế và giải thuật",             74),
-    (4,             7,              12,             "2022-09-30",   "2022-11-05",   ,               "Phân tích thiết kế và giải thuật",             74),
-    (3,             1,              6,              "2022-09-29",   "2022-11-04",   ,               "Phân tích thiết kế và giải thuật",             75),
-    (2,             2,              6,              "2022-09-29",   "2022-11-03",   ,               "Cơ sở dữ liệu",                104),
-    (2,             8,              12,             "2022-09-29",   "2022-11-03",   ,               "Cơ sở dữ liệu",                104),
-    (3,             2,              6,              "2022-09-30",   "2022-11-05",   ,               "Cơ sở dữ liệu",                104),
-    (3,             8,              12,             "2022-09-30",   "2022-11-04",   ,               "Cơ sở dữ liệu",                104),
-    (5,             1,              5,              "2023-09-19",   "2023-10-30",   ,               "Các hệ cơ sở dữ liệu",             112),
-    (5,             7,              11,             "2023-09-19",   "2023-10-30",   ,               "Các hệ cơ sở dữ liệu",             112),
-    (4,             1,              5,              "2023-09-18",   "2023-10-29",   ,               "Các hệ cơ sở dữ liệu",             112),
-    (6,             1,              3,              "2023-03-02",   "2023-04-12",   ,               "Phân tích thiết kế hướng đối tượng",               78),
-    (6,             4,              6,              "2023-03-02",   "2023-04-12",   ,               "Phân tích thiết kế hướng đối tượng",               78),
-    (7,             1,              3,              "2023-09-22",   "2023-11-05",   ,               "Trí tuệ nhân tạo",             95),
-    (7,             4,              6,              "2023-09-22",   "2023-11-05",   ,               "Trí tuệ nhân tạo",             95)
+    (1,             5,              "2022-02-26",   "2022-05-15",   ,               7,          117),
+    (7,             11,             "2022-02-26",   "2022-05-15",   ,               7,          117),
+    (1,             6,              "2022-02-26",   "2022-05-15",   ,               37,         117),
+    (7,             12,             "2022-02-26",   "2022-05-15",   ,               37,         117),
+    (1,             6,              "2022-02-16",   "2022-05-25",   ,               59,         116),
+    (7,             12,             "2022-02-17",   "2022-05-26",   ,               59,         116),
+    (1,             6,              "2022-02-16",   "2022-05-25",   ,               44,         118),
+    (7,             12,             "2022-02-16",   "2022-05-25",   ,               44,         118),
+    (1,             5,              "2022-03-02",   "2022-05-30",   ,               36,         112),
+    (7,             11,             "2022-03-02",   "2022-05-30",   ,               36,         112),
+    (1,             6,              "2022-09-19",   "2022-11-06",   ,               41,         113),
+    (7,             12,             "2022-09-19",   "2022-11-06",   ,               41,         113),
+    (1,             6,              "2022-09-20",   "2022-11-07",   ,               41,         113),
+    (1,             5,              "2022-03-14",   "2022-05-04",   ,               105,        44),
+    (7,             11,             "2022-03-14",   "2022-05-04",   ,               105,        44),
+    (1,             5,              "2022-03-13",   "2022-05-16",   ,               104,        85),
+    (7,             11,             "2022-03-13",   "2022-05-16",   ,               104,        85),
+    (1,             5,              "2022-09-04",   "2022-10-23",   ,               103,        63),
+    (1,             5,              "2022-09-05",   "2022-10-24",   ,               103,        63),
+    (1,             5,              "2022-02-25",   "2022-04-02",   ,               106,        85),
+    (7,             11,             "2022-02-25",   "2022-04-02",   ,               106,        85),
+    (1,             5,              "2022-02-25",   "2022-04-02",   ,               106,        88),
+    (2,             6,              "2023-09-09",   "2022-10-24",   ,               11,         113),
+    (1,             5,              "2023-09-08",   "2022-10-23",   ,               11,         113),
+    (7,             9,              "2023-09-06",   "2023-10-24",   ,               33,         117),
+    (1,             3,              "2023-09-06",   "2023-10-24",   ,               33,         117),
+    (1,             5,              "2023-02-28",   "2022-04-03",   ,               19,         102),
+    (7,             11,             "2023-02-28",   "2022-04-03",   ,               19,         102),
+    (1,             5,              "2023-03-02",   "2022-04-23",   ,               35,         112),
+    (7,             11,             "2023-03-02",   "2022-04-23",   ,               35,         112),
+    (1,             5,              "2023-09-06",   "2023-11-22",   ,               23,         95),
+    (7,             11,             "2023-09-06",   "2023-11-22",   ,               23,         95),
+    (1,             6,              "2022-09-30",   "2022-11-05",   ,               53,         74),
+    (7,             12,             "2022-09-30",   "2022-11-05",   ,               53,         74),
+    (1,             6,              "2022-09-29",   "2022-11-04",   ,               53,         75),
+    (2,             6,              "2022-09-29",   "2022-11-03",   ,               10,         104),
+    (8,             12,             "2022-09-29",   "2022-11-03",   ,               10,         104),
+    (2,             6,              "2022-09-30",   "2022-11-05",   ,               10,         104),
+    (8,             12,             "2022-09-30",   "2022-11-04",   ,               10,         104),
+    (1,             5,              "2023-09-19",   "2023-10-30",   ,               4,          112),
+    (7,             11,             "2023-09-19",   "2023-10-30",   ,               4,          112),
+    (1,             5,              "2023-09-18",   "2023-10-29",   ,               4,          112),
+    (1,             3,              "2023-03-02",   "2023-04-12",   ,               54,         78),
+    (4,             6,              "2023-03-02",   "2023-04-12",   ,               54,         78),
+    (1,             3,              "2023-09-22",   "2023-11-05",   ,               69,         95),
+    (4,             6,              "2023-09-22",   "2023-11-05",   ,               69,         95)
+-- giáo dục quốc phòng
+    (1,             4,              "2022-02-15",   "2022-03-15",   ,               80,         1),
+    (1,             4,              "2022-03-22",   "2022-04-22",   ,               80,         1),
+    (1,             4,              "2022-03-12",   "2022-04-12",   ,               80,         2),
+    (1,             4,              "2022-09-16",   "2022-10-21",   ,               79,         5),
+    (7,             10,             "2022-09-16",   "2022-10-21",   ,               79,         5),
+    (1,             4,              "2022-09-14",   "2022-10-19",   ,               79,         6),
+    (7,             10,             "2022-09-14",   "2022-10-19",   ,               79,         6),
+    (1,             5,              "2023-02-11",   "2023-03-18",   ,               82,         7),
+    (7,             11,             "2023-02-11",   "2023-03-18",   ,               82,         7),
+    (1,             5,              "2023-02-12",   "2023-03-19",   ,               82,         8),
+    (1,             5,              "2023-03-24",   "2023-05-01",   ,               82,         8),
+    (1,             6,              "2023-09-02",   "2023-10-07",   ,               81,         3),
+    (7,             12,             "2023-09-02",   "2023-10-07",   ,               81,         3),
+    (1,             6,              "2023-09-01",   "2023-10-06",   ,               81,         4),
+    (7,             12,             "2023-09-01",   "2023-10-06",   ,               81,         4)
+;
+
+INSERT INTO course
+    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
+        -- NN
+    ("ENGL240101",	"Cơ sở chung",	4,				"TA",		"THQH",		2,			"LVS_A203",		2,				6,			"2022-02-13",	"2022-04-21",	"Tiếng Anh học phần I"),
+    ("ENGL240102",	"Cơ sở chung",	4,				"TA",		"THQH",		2,			"LVS_A203",		8,				12,			"2022-02-13",	"2022-04-21",	"Tiếng Anh học phần I"),
+    ("ENGL240103",	"Cơ sở chung",	4,				"TA",		"NTO",		3,			"LVS_A207",		2,				6,			"2022-02-14",	"2022-04-22",	"Tiếng Anh học phần I"),
+    ("ENGL240201",	"Cơ sở chung",	3,				"TA",		"NTH",		4,			"LLQ_D310",		1,				5,			"2022-09-19",	"2022-11-23",	"Tiếng Anh học phần II"),
+    ("ENGL240202",	"Cơ sở chung",	3,				"TA",		"NTH",		3,			"LLQ_D310",		1,				5,			"2022-09-22",	"2022-11-27",	"Tiếng Anh học phần II"),
+    ("ENGL240203",	"Cơ sở chung",	3,				"TA",		"THQH",		4,			"LLQ_D209",		1,				5,			"2022-09-19",	"2022-11-23",	"Tiếng Anh học phần II"),
+    ("ENGL240301",	"Cơ sở chung",	3,				"TA",		"PTMH",		7,			"LLQ_D304",		1,				6,			"2023-02-23",	"2023-04-14",	"Tiếng Anh học phần III"),
+    ("ENGL240302",	"Cơ sở chung",	3,				"TA",		"PTMH",		7,			"LLQ_D304",		7,				12,			"2023-02-23",	"2023-04-14",	"Tiếng Anh học phần III"),
+;
+
+INSERT INTO course
+    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
+        -- GDCT
+    ("POLI190301",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		2,			"ADV_DB204",	1,				6,			"2022-02-13",	"2022-03-22",	"Pháp luật đại cương"),
+    ("POLI190302",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		2,			"ADV_B204",		7,				12,			"2022-02-13",	"2022-03-22",	"Pháp luật đại cương"),
+    ("POLI190303",	"Cơ sở chung",	2,				"GDCT",		"NHH",		4,			"ADV_B205",		1,				6,			"2023-02-12",	"2022-03-21",	"Pháp luật đại cương"),
+    ("POLI190304",	"Cơ sở chung",	2,				"GDCT",		"NHH",		4,			"ADV_B205",		7,				12,			"2023-02-12",	"2022-03-21",	"Pháp luật đại cương"),
+    ("POLI200101",	"Cơ sở chung",	3,				"GDCT",		"NHBP",		3,			"ADV_B106",		1,				5,			"2022-02-14",	"2022-03-29",	"Triết học Mác-Lênin"),
+    ("POLI200102",	"Cơ sở chung",	3,				"GDCT",		"NHBP",		3,			"ADV_B106",		7,				11,			"2022-02-14",	"2022-03-29",	"Triết học Mác-Lênin"),
+    ("POLI200103",	"Cơ sở chung",	3,				"GDCT",		"NTMH",		4,			"ADV_B107",		2,				6,			"2022-02-15",	"2022-03-30",	"Triết học Mác-Lênin"),
+    ("POLI200104",	"Cơ sở chung",	3,				"GDCT",		"NTMH",		4,			"ADV_B107",		7,				11,			"2022-02-15",	"2022-03-30",	"Triết học Mác-Lênin"),
+    ("POLI200301",	"Cơ sở chung",	2,				"GDCT",		"NKT",		5,			"ADV_B207",		1,				5,			"2022-03-10",	"2022-04-14",	"Chủ nghĩa xã hội khoa học"),
+    ("POLI200302",	"Cơ sở chung",	2,				"GDCT",		"NKT",		5,			"ADV_B207",		7,				11,			"2022-03-10",	"2022-04-14",	"Chủ nghĩa xã hội khoa học"),
+    ("POLI200303",	"Cơ sở chung",	2,				"GDCT",		"LNVA",		6,			"ADV_B206",		1,				5,			"2022-03-11",	"2022-04-15",	"Chủ nghĩa xã hội khoa học"),
+    ("POLI200201",	"Cơ sở chung",	2,				"GDCT",		"TBP",		4,			"ADV_B214",		1,				5,			"2022-09-20",	"2022-11-26",	"Kinh tế chính trị Mác-Lênin"),
+    ("POLI200202",	"Cơ sở chung",	2,				"GDCT",		"TBP",		4,			"ADV_B214",		7,				11,			"2022-09-20",	"2022-11-26",	"Kinh tế chính trị Mác-Lênin"),
+    ("POLI200203",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		3,			"ADV_B215",		2,				6,			"2022-09-19",	"2022-11-25",	"Kinh tế chính trị Mác-Lênin"),
+    ("POLI200401",	"Cơ sở chung",	2,				"GDCT",		"NBK",		7,			"LLQ_D301",		1,				6,			"2023-02-27",	"2023-03-30",	"Lịch sử Đảng cộng sản Việt Nam"),
+    ("POLI200402",	"Cơ sở chung",	2,				"GDCT",		"NBK",		7,			"LLQ_D301",		7,				12,			"2023-02-27",	"2023-03-30",	"Lịch sử Đảng cộng sản Việt Nam"),
+    ("POLI200403",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		6,			"LLQ_D311",		1,				6,			"2023-02-26",	"2023-03-29",	"Lịch sử Đảng cộng sản Việt Nam"),
+    ("POLI200404",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		6,			"LLQ_D311",		7,				12,			"2023-02-26",	"2023-03-29",	"Lịch sử Đảng cộng sản Việt Nam"),
+    ("POLI200405",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		5,			"LLQ_D312",		1,				6,			"2023-02-25",	"2023-03-28",	"Lịch sử Đảng cộng sản Việt Nam")
+;
+
+INSERT INTO course
+    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
+VALUES
+        -- GDTC
+    ("PHYL240101",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		1,				3,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
+    ("PHYL240102",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		4,				6,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
+    ("PHYL240103",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		7,				9,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
+    ("PHYL240701",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		5,			"ADV_NTD",		1,				3,			"2022-09-18",	"2022-11-04",	"Giáo dục thể chất 2 (Thể dục - Bóng rổ cơ bản)"),
+    ("PHYL240702",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		5,			"ADV_NTD",		4,				6,			"2022-09-18",	"2022-11-04",	"Giáo dục thể chất 2 (Thể dục - Bóng rổ cơ bản)"),
+    ("PHYL240201",	"Cơ sở chung",	1,				"GDTC",		"NQH",		3,			"ADV_NTD",		1,				3,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Bóng chuyền cơ bản)"),
+    ("PHYL240202",	"Cơ sở chung",	1,				"GDTC",		"NQH",		3,			"ADV_NTD",		4,				6,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Bóng chuyền cơ bản)"),
+    ("PHYL240301",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Cầu lông cơ bản)"),
+    ("PHYL240302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			4,				6,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Cầu lông cơ bản)"),
+    ("PHYL241701",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		7,			"ADV_NTD",		1,				3,			"2023-03-10",	"2023-04-30",	"Giáo dục thể chất 3 (Thể dục - Bóng rổ nâng cao)"),
+    ("PHYL241702",	"Cơ sở chung",	1,				"GDTC",		"NQH",		7,			"ADV_NTD",		4,				6,			"2023-03-10",	"2023-04-30",	"Giáo dục thể chất 3 (Thể dục - Bóng rổ nâng cao)"),
+    ("PHYL241201",	"Cơ sở chung",	1,				"GDTC",		"PTL",		6,			"ADV_SanM",		1,				3,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
+    ("PHYL241202",	"Cơ sở chung",	1,				"GDTC",		"NQH",		6,			"ADV_SanM",		7,				9,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
+    ("PHYL241301",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)"),
+    ("PHYL241302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)")
 ;
 
 insert into lecturer
@@ -409,89 +494,3 @@ values
     ("Đan",     "Lã Kiều",                  22),    ("Chi",     "Viên Nhi",                 22),    ("Cao",     "Đặng ",                    22),    ("Huyền",   "Tống Cảnh Loan Hà",        22),    ("Ánh",     "Hồ ",                      22),    
     ("Ngân",    "Giêng Hải",                22),    ("Diệp",    "Khương ",                  22),    ("Thanh",   "Ngô ",                     22),    ("Trí",     "Mai ",                     22),    ("Trung",   "Mai ",                     22)
 ;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
-        -- GDQP
-    ("MILI270101",	"Cơ sở chung",	1,				"GDQP",		"NDT",		4,			"LVS_D103",		1,				4,			"2022-02-15",	"2022-03-15",	"Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam"),
-    ("MILI270102",	"Cơ sở chung",	1,				"GDQP",		"DVK",		4,			"LVS_D103",		1,				4,			"2022-03-22",	"2022-04-22",	"Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam"),
-    ("MILI270103",	"Cơ sở chung",	1,				"GDQP",		"NHT",		7,			"LVS_D102",		1,				4,			"2022-03-12",	"2022-04-12",	"Đường lối quốc phòng và an ninh của Đảng Cộng sản Việt Nam"),
-    ("MILI270201",	"Cơ sở chung",	2,				"GDQP",		"DVK",		3,			"LVS_D103",		1,				4,			"2022-09-16",	"2022-10-21",	"Công tác quốc phòng và an ninh"),
-    ("MILI270202",	"Cơ sở chung",	2,				"GDQP",		"DVK",		3,			"LVS_D103",		7,				10,			"2022-09-16",	"2022-10-21",	"Công tác quốc phòng và an ninh"),
-    ("MILI270203",	"Cơ sở chung",	2,				"GDQP",		"BQT",		5,			"LVS_D102",		1,				4,			"2022-09-14",	"2022-10-19",	"Công tác quốc phòng và an ninh"),
-    ("MILI270204",	"Cơ sở chung",	2,				"GDQP",		"BQT",		5,			"LVS_D102",		7,				10,			"2022-09-14",	"2022-10-19",	"Công tác quốc phòng và an ninh"),
-    ("MILI270301",	"Cơ sở chung",	1,				"GDQP",		"TVH",		3,			"LLQ_D302",		1,				5,			"2023-02-11",	"2023-03-18",	"Quân sự chung"),
-    ("MILI270302",	"Cơ sở chung",	1,				"GDQP",		"TVH",		3,			"LLQ_D302",		7,				11,			"2023-02-11",	"2023-03-18",	"Quân sự chung"),
-    ("MILI270303",	"Cơ sở chung",	1,				"GDQP",		"NVD",		4,			"LLQ_D304",		1,				5,			"2023-02-12",	"2023-03-19",	"Quân sự chung"),
-    ("MILI270304",	"Cơ sở chung",	1,				"GDQP",		"NVD",		4,			"LLQ_D304",		1,				5,			"2023-03-24",	"2023-05-01",	"Quân sự chung"),
-    ("MILI270401",	"Cơ sở chung",	4,				"GDQP",		"DVK",		7,			"NT",			1,				6,			"2023-09-02",	"2023-10-07",	"Kỹ thuật chiến đấu và bộ binh"),
-    ("MILI270402",	"Cơ sở chung",	4,				"GDQP",		"DVK",		7,			"NT",			7,				12,			"2023-09-02",	"2023-10-07",	"Kỹ thuật chiến đấu và bộ binh"),
-    ("MILI270403",	"Cơ sở chung",	4,				"GDQP",		"BQT",		6,			"NT",			1,				6,			"2023-09-01",	"2023-10-06",	"Kỹ thuật chiến đấu và bộ binh"),
-    ("MILI270404",	"Cơ sở chung",	4,				"GDQP",		"BQT",		6,			"NT",			7,				12,			"2023-09-01",	"2023-10-06",	"Kỹ thuật chiến đấu và bộ binh")
-;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
-        -- NN
-    ("ENGL240101",	"Cơ sở chung",	4,				"TA",		"THQH",		2,			"LVS_A203",		2,				6,			"2022-02-13",	"2022-04-21",	"Tiếng Anh học phần I"),
-    ("ENGL240102",	"Cơ sở chung",	4,				"TA",		"THQH",		2,			"LVS_A203",		8,				12,			"2022-02-13",	"2022-04-21",	"Tiếng Anh học phần I"),
-    ("ENGL240103",	"Cơ sở chung",	4,				"TA",		"NTO",		3,			"LVS_A207",		2,				6,			"2022-02-14",	"2022-04-22",	"Tiếng Anh học phần I"),
-    ("ENGL240201",	"Cơ sở chung",	3,				"TA",		"NTH",		4,			"LLQ_D310",		1,				5,			"2022-09-19",	"2022-11-23",	"Tiếng Anh học phần II"),
-    ("ENGL240202",	"Cơ sở chung",	3,				"TA",		"NTH",		3,			"LLQ_D310",		1,				5,			"2022-09-22",	"2022-11-27",	"Tiếng Anh học phần II"),
-    ("ENGL240203",	"Cơ sở chung",	3,				"TA",		"THQH",		4,			"LLQ_D209",		1,				5,			"2022-09-19",	"2022-11-23",	"Tiếng Anh học phần II"),
-    ("ENGL240301",	"Cơ sở chung",	3,				"TA",		"PTMH",		7,			"LLQ_D304",		1,				6,			"2023-02-23",	"2023-04-14",	"Tiếng Anh học phần III"),
-    ("ENGL240302",	"Cơ sở chung",	3,				"TA",		"PTMH",		7,			"LLQ_D304",		7,				12,			"2023-02-23",	"2023-04-14",	"Tiếng Anh học phần III"),
-;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
-        -- GDCT
-    ("POLI190301",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		2,			"ADV_DB204",	1,				6,			"2022-02-13",	"2022-03-22",	"Pháp luật đại cương"),
-    ("POLI190302",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		2,			"ADV_B204",		7,				12,			"2022-02-13",	"2022-03-22",	"Pháp luật đại cương"),
-    ("POLI190303",	"Cơ sở chung",	2,				"GDCT",		"NHH",		4,			"ADV_B205",		1,				6,			"2023-02-12",	"2022-03-21",	"Pháp luật đại cương"),
-    ("POLI190304",	"Cơ sở chung",	2,				"GDCT",		"NHH",		4,			"ADV_B205",		7,				12,			"2023-02-12",	"2022-03-21",	"Pháp luật đại cương"),
-    ("POLI200101",	"Cơ sở chung",	3,				"GDCT",		"NHBP",		3,			"ADV_B106",		1,				5,			"2022-02-14",	"2022-03-29",	"Triết học Mác-Lênin"),
-    ("POLI200102",	"Cơ sở chung",	3,				"GDCT",		"NHBP",		3,			"ADV_B106",		7,				11,			"2022-02-14",	"2022-03-29",	"Triết học Mác-Lênin"),
-    ("POLI200103",	"Cơ sở chung",	3,				"GDCT",		"NTMH",		4,			"ADV_B107",		2,				6,			"2022-02-15",	"2022-03-30",	"Triết học Mác-Lênin"),
-    ("POLI200104",	"Cơ sở chung",	3,				"GDCT",		"NTMH",		4,			"ADV_B107",		7,				11,			"2022-02-15",	"2022-03-30",	"Triết học Mác-Lênin"),
-    ("POLI200301",	"Cơ sở chung",	2,				"GDCT",		"NKT",		5,			"ADV_B207",		1,				5,			"2022-03-10",	"2022-04-14",	"Chủ nghĩa xã hội khoa học"),
-    ("POLI200302",	"Cơ sở chung",	2,				"GDCT",		"NKT",		5,			"ADV_B207",		7,				11,			"2022-03-10",	"2022-04-14",	"Chủ nghĩa xã hội khoa học"),
-    ("POLI200303",	"Cơ sở chung",	2,				"GDCT",		"LNVA",		6,			"ADV_B206",		1,				5,			"2022-03-11",	"2022-04-15",	"Chủ nghĩa xã hội khoa học"),
-    ("POLI200201",	"Cơ sở chung",	2,				"GDCT",		"TBP",		4,			"ADV_B214",		1,				5,			"2022-09-20",	"2022-11-26",	"Kinh tế chính trị Mác-Lênin"),
-    ("POLI200202",	"Cơ sở chung",	2,				"GDCT",		"TBP",		4,			"ADV_B214",		7,				11,			"2022-09-20",	"2022-11-26",	"Kinh tế chính trị Mác-Lênin"),
-    ("POLI200203",	"Cơ sở chung",	2,				"GDCT",		"NNHD",		3,			"ADV_B215",		2,				6,			"2022-09-19",	"2022-11-25",	"Kinh tế chính trị Mác-Lênin"),
-    ("POLI200401",	"Cơ sở chung",	2,				"GDCT",		"NBK",		7,			"LLQ_D301",		1,				6,			"2023-02-27",	"2023-03-30",	"Lịch sử Đảng cộng sản Việt Nam"),
-    ("POLI200402",	"Cơ sở chung",	2,				"GDCT",		"NBK",		7,			"LLQ_D301",		7,				12,			"2023-02-27",	"2023-03-30",	"Lịch sử Đảng cộng sản Việt Nam"),
-    ("POLI200403",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		6,			"LLQ_D311",		1,				6,			"2023-02-26",	"2023-03-29",	"Lịch sử Đảng cộng sản Việt Nam"),
-    ("POLI200404",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		6,			"LLQ_D311",		7,				12,			"2023-02-26",	"2023-03-29",	"Lịch sử Đảng cộng sản Việt Nam"),
-    ("POLI200405",	"Cơ sở chung",	2,				"GDCT",		"TTHN",		5,			"LLQ_D312",		1,				6,			"2023-02-25",	"2023-03-28",	"Lịch sử Đảng cộng sản Việt Nam")
-;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
-        -- GDTC
-    ("PHYL240101",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		1,				3,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
-    ("PHYL240102",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		4,				6,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
-    ("PHYL240103",	"Cơ sở chung",	1,				"GDTC",		"BNB",		4,			"ADV_SanM",		7,				9,			"2022-02-17",	"2022-03-20",	"Giáo dục thể chất 1 (Thể dục - Điền kinh)"),
-    ("PHYL240701",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		5,			"ADV_NTD",		1,				3,			"2022-09-18",	"2022-11-04",	"Giáo dục thể chất 2 (Thể dục - Bóng rổ cơ bản)"),
-    ("PHYL240702",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		5,			"ADV_NTD",		4,				6,			"2022-09-18",	"2022-11-04",	"Giáo dục thể chất 2 (Thể dục - Bóng rổ cơ bản)"),
-    ("PHYL240201",	"Cơ sở chung",	1,				"GDTC",		"NQH",		3,			"ADV_NTD",		1,				3,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Bóng chuyền cơ bản)"),
-    ("PHYL240202",	"Cơ sở chung",	1,				"GDTC",		"NQH",		3,			"ADV_NTD",		4,				6,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Bóng chuyền cơ bản)"),
-    ("PHYL240301",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Cầu lông cơ bản)"),
-    ("PHYL240302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			4,				6,			"2022-09-16",	"2022-11-02",	"Giáo dục thể chất 2 (Thể dục - Cầu lông cơ bản)"),
-    ("PHYL241701",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		7,			"ADV_NTD",		1,				3,			"2023-03-10",	"2023-04-30",	"Giáo dục thể chất 3 (Thể dục - Bóng rổ nâng cao)"),
-    ("PHYL241702",	"Cơ sở chung",	1,				"GDTC",		"NQH",		7,			"ADV_NTD",		4,				6,			"2023-03-10",	"2023-04-30",	"Giáo dục thể chất 3 (Thể dục - Bóng rổ nâng cao)"),
-    ("PHYL241201",	"Cơ sở chung",	1,				"GDTC",		"PTL",		6,			"ADV_SanM",		1,				3,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
-    ("PHYL241202",	"Cơ sở chung",	1,				"GDTC",		"NQH",		6,			"ADV_SanM",		7,				9,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
-    ("PHYL241301",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)"),
-    ("PHYL241302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)")
-;
-
-insert into class
-    (days_of_week, start_session, end_session, start_date, end_date, lecturer_id, course_id, classroom_id)
-values
-    ()

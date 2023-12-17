@@ -85,7 +85,6 @@ create table student (
 
 create table class (
     id                  int unsigned        not null    auto_increment,
-    days_of_week        bit(3),
     start_session       tinyint(2) unsigned,
     end_session         tinyint(2) unsigned,  
     start_date          date,
