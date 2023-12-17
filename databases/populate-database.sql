@@ -443,20 +443,6 @@ VALUES
     ("ENGL240203",	"Cơ sở chung",	3,				"TA",		"THQH",		4,			"LLQ_D209",		1,				5,			"2022-09-19",	"2022-11-23",	"Tiếng Anh học phần II"),
     ("ENGL240301",	"Cơ sở chung",	3,				"TA",		"PTMH",		7,			"LLQ_D304",		1,				6,			"2023-02-23",	"2023-04-14",	"Tiếng Anh học phần III"),
     ("ENGL240302",	"Cơ sở chung",	3,				"TA",		"PTMH",		7,			"LLQ_D304",		7,				12,			"2023-02-23",	"2023-04-14",	"Tiếng Anh học phần III"),
-    ("FRAN240101",	"Cơ sở chung",	4,				"TP",		"NHMT",		2,			"LVS_A210",		1,				5,			"2022-02-13",	"2022-04-21",	"Tiếng Pháp học phần I"),
-    ("FRAN240102",	"Cơ sở chung",	4,				"TP",		"NHMT",		2,			"LVS_A209",		7,				11,			"2022-02-13",	"2022-04-21",	"Tiếng Pháp học phần I"),
-    ("FRAN240201",	"Cơ sở chung",	3,				"TP",		"TLBC",		5,			"LVS_A303",		2,				6,			"2022-09-14",	"2022-11-22",	"Tiếng Pháp học phần II"),
-    ("FRAN240202",	"Cơ sở chung",	3,				"TP",		"TLBC",		5,			"LVS_A303",		7,				11,			"2022-09-14",	"2022-11-22",	"Tiếng Pháp học phần II"),
-    ("FRAN240301",	"Cơ sở chung",	3,				"TP",		"VTM",		7,			"LLQ_D110",		1,				6,			"2023-02-23",	"2023-04-14",	"Tiếng Pháp học phần III"),
-    ("FRAN240302",	"Cơ sở chung",	3,				"TP",		"VTM",		7,			"LLQ_D110",		7,				12,			"2023-02-23",	"2023-04-14",	"Tiếng Pháp học phần III"),
-    ("FRAN240303",	"Cơ sở chung",	3,				"TP",		"VTM",		6,			"LLQ_D110",		1,				6,			"2023-02-22",	"2023-04-15",	"Tiếng Pháp học phần III"),
-    ("CHIN240101",	"Cơ sở chung",	4,				"TT",		"DTHH",		4,			"LLQ_D204",		1,				5,			"2022-02-22",	"2022-04-12",	"Tiếng Trung học phần I"),
-    ("CHIN240102",	"Cơ sở chung",	4,				"TT",		"DTHH",		4,			"LLQ_D204",		7,				11,			"2022-02-22",	"2022-04-12",	"Tiếng Trung học phần I"),
-    ("CHIN240103",	"Cơ sở chung",	4,				"TT",		"VTH",		5,			"LLQ_D205",		1,				5,			"2022-02-23",	"2022-04-10",	"Tiếng Trung học phần I"),
-    ("CHIN240201",	"Cơ sở chung",	3,				"TT",		"VTH",		2,			"LLQ_D204",		1,				5,			"2022-09-13",	"2022-11-28",	"Tiếng Trung học phần II"),
-    ("CHIN240202",	"Cơ sở chung",	3,				"TT",		"PND",		2,			"LLQ_D204",		7,				11,			"2022-09-13",	"2022-11-28",	"Tiếng Trung học phần II"),
-    ("CHIN240301",	"Cơ sở chung",	3,				"TT",		"NDT",		3,			"LLQ_D204",		1,				5,			"2023-02-28",	"2023-04-18",	"Tiếng Trung học phần III"),
-    ("CHIN240302",	"Cơ sở chung",	3,				"TT",		"NDT",		3,			"LLQ_D204",		1,				5,			"2023-02-28",	"2023-04-18",	"Tiếng Trung học phần III")
 ;
 
 INSERT INTO course
@@ -503,39 +489,6 @@ VALUES
     ("PHYL241202",	"Cơ sở chung",	1,				"GDTC",		"NQH",		6,			"ADV_SanM",		7,				9,			"2023-03-16",	"2023-04-02",	"Giáo dục thể chất 3 (Thể dục - Bóng chuyền nâng cao)"),
     ("PHYL241301",	"Cơ sở chung",	1,				"GDTC",		"LVKH",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)"),
     ("PHYL241302",	"Cơ sở chung",	1,				"GDTC",		"PTL",		3,			"NT",			1,				3,			"2023-03-20",	"2023-04-25",	"Giáo dục thể chất 3 (Thể dục - Cầu lông nâng cao)")
-;
-
-INSERT INTO course
-    (courseID,		courseType,		creditCount,	facultyID,	lecturerID,	weekDay,	classroomID,	startSession,	endSession,	startDate,		endDate,		courseName)
-VALUES
-        -- GDCT
-    ("POLI170001",	"Cơ sở ngành",	2,				"GDCT",		"NTQT",		3,			"ADV_C701",		1,				3,			"2022-02-18",	"2022-03-30",	"Phương pháp nghiên cứu khoa học Giáo dục kinh tế và pháp luật"),
-    ("POLI170002",	"Cơ sở ngành",	2,				"GDCT",		"NTQT",		3,			"ADV_C701",		4,				6,			"2022-02-18",	"2022-03-30",	"Phương pháp nghiên cứu khoa học Giáo dục kinh tế và pháp luật"),
-    ("POLI240401",	"Cơ sở ngành",	2,				"GDCT",		"LVT",		2,			"ADV_A104",		1,				4,			"2022-02-25",	"2022-04-02",	"Logic học đại cương"),
-    ("POLI240402",	"Cơ sở ngành",	2,				"GDCT",		"LVT",		2,			"ADV_A104",		7,				11,			"2022-02-25",	"2022-04-02",	"Logic học đại cương"),
-    ("POLI130801",	"Cơ sở ngành",	3,				"GDCT",		"PQH",		3,			"ADV_B211",		1,				3,			"2022-03-14",	"2022-05-04",	"Pháp luật Việt Nam đại cương"),
-    ("POLI130802",	"Cơ sở ngành",	3,				"GDCT",		"PQH",		3,			"ADV_B211",		4,				6,			"2022-03-14",	"2022-05-04",	"Pháp luật Việt Nam đại cương"),
-    ("POLI130803",	"Cơ sở ngành",	3,				"GDCT",		"PQH",		5,			"ADV_B210",		1,				3,			"2022-03-16",	"2022-05-06",	"Pháp luật Việt Nam đại cương"),
-    ("POLI141001",	"Cơ sở ngành",	2,				"GDCT",		"PMT",		2,			"ADV_B103",		2,				5,			"2022-02-17",	"2022-03-26",	"Lịch sử Triết học Mác-Lênin"),
-    ("POLI141002",	"Cơ sở ngành",	2,				"GDCT",		"PMT",		2,			"ADV_B103",		2,				5,			"2022-02-17",	"2022-03-26",	"Lịch sử Triết học Mác-Lênin"),
-    ("LITR100301",	"Cơ sở ngành",	2,				"GDCT",		"DTTY",		6,			"ADV_C703",		1,				3,			"2022-03-13",	"2022-05-16",	"Cơ sở văn hóa Việt Nam"),
-    ("LITR100302",	"Cơ sở ngành",	2,				"GDCT",		"DTTY",		6,			"ADV_C703",		4,				6,			"2022-03-13",	"2022-05-16",	"Cơ sở văn hóa Việt Nam"),
-    ("POLI140801",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		7,			"ADV_B207",		1,				5,			"2022-02-13",	"2022-05-16",	"Đạo đức Hồ Chí Minh"),
-    ("POLI140802",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		7,			"ADV_B207",		7,				11,			"2022-02-13",	"2022-05-16",	"Đạo đức Hồ Chí Minh"),
-    ("POLI102101",	"Chuyên ngành",	2,				"GDCT",		"LNVA",		5,			"LVS_A104",		2,				5,			"2022-03-01",	"2022-04-20",	"Hiến pháp và định chế chính trị"),
-    ("POLI102102",	"Chuyên ngành",	2,				"GDCT",		"LNVA",		5,			"LVS_A104",		7,				10,			"2022-03-01",	"2022-04-20",	"Hiến pháp và định chế chính trị"),
-    ("POLI141601",	"Chuyên ngành",	3,				"GDCT",		"TBP",		3,			"LVS_D103",		1,				3,			"2022-03-01",	"2022-04-20",	"Chuyên đề Triết học"),
-    ("POLI141602",	"Chuyên ngành",	3,				"GDCT",		"TBP",		3,			"LVS_D103",		4,				6,			"2022-03-01",	"2022-04-20",	"Chuyên đề Triết học"),
-    ("POLI141701",	"Chuyên ngành",	3,				"GDCT",		"NKT",		3,			"ADV_B103",		1,				3,			"2022-04-01",	"2022-05-20",	"Chuyên đề Kinh tế chính trị"),
-    ("POLI141702",	"Chuyên ngành",	3,				"GDCT",		"NKT",		3,			"ADV_B103",		1,				3,			"2022-04-01",	"2022-05-20",	"Chuyên đề Kinh tế chính trị"),
-    ("POLI104501",	"Chuyên ngành",	2,				"GDCT",		"NTMH",		4,			"ADV_A102",		4,				6,			"2022-09-15",	"2022-10-25",	"Kinh tế phát triển"),
-    ("POLI104502",	"Chuyên ngành",	2,				"GDCT",		"NTMH",		4,			"ADV_A102",		7,				10,			"2022-09-15",	"2022-10-25",	"Kinh tế phát triển"),
-    ("POLI104503",	"Chuyên ngành",	2,				"GDCT",		"NTMH",		4,			"ADV_A105",		1,				3,			"2022-09-15",	"2022-10-25",	"Kinh tế phát triển"),
-    ("POLI144901",	"Chuyên ngành",	2,				"GDCT",		"NHBP",		7,			"ADV_C705",		1,				3,			"2023-02-26",	"2023-03-29",	"Kinh tế quốc tế"),
-    ("POLI144902",	"Chuyên ngành",	2,				"GDCT",		"NHBP",		7,			"ADV_C705",		4,				6,			"2023-02-26",	"2023-03-29",	"Kinh tế quốc tế"),
-    ("POLI144903",	"Chuyên ngành",	2,				"GDCT",		"NHBP",		7,			"ADV_C705",		7,				9,			"2023-02-26",	"2023-03-29",	"Kinh tế quốc tế"),
-    ("POLI130701",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		6,			"LLQ_D208",		1,				4,			"2022-03-13",	"2022-05-02",	"Phương pháp và phong cách Hồ Chí Minh"),
-    ("POLI130702",	"Chuyên ngành",	2,				"GDCT",		"TTHN",		6,			"LLQ_D208",		1,				4,			"2022-03-13",	"2022-05-02",	"Phương pháp và phong cách Hồ Chí Minh")
 ;
 
 insert into class
