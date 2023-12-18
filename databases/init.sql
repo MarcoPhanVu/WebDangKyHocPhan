@@ -1,6 +1,4 @@
--- ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗
--- ║ this script only me and god knows how it works, but now none of us know how it works, good luck ║ ¯\_(ツ)_/¯
--- ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝
+-- this script only me and god knows how it works, but now none of us know how it works, good luck ¯\_(ツ)_/¯
 
 -- ╔════════════════════════════════════════════╗
 -- ║              editable options              ║
@@ -31,9 +29,7 @@ deallocate prepare create_stmt;
 use `user_course_registration`;
 -- ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ --
 
--- ╔════════════════════╗ -------------------------------------------------------------------------
--- ║ create main tables ║ -------------------------------------------------------------------------
--- ╚════════════════════╝ -------------------------------------------------------------------------
+-- ═╣ create main tables ╠═════════════════════════════════════════════════════════════════════════
 -- have no key ----------------------------------
 create table faculty (
     id                  int unsigned        not null    auto_increment,
@@ -97,7 +93,7 @@ create table class (
     primary key (id)
 );
 
--- many-to-many relationship ----------------------------------------------------------------------
+-- many-to-many relationship --------------------
 create table registration_results (
     id                  int unsigned        not null    auto_increment,
 
@@ -107,7 +103,7 @@ create table registration_results (
     primary key (id)
 );
 
--- add foreign key --------------------------------------------------------------------------------
+-- ═╣ add foreign key ╠════════════════════════════════════════════════════════════════════════════
 alter table course                  add constraint fk_course_faculty                foreign key (faculty_id)    references faculty(id)      on delete cascade;
 alter table lecturer                add constraint fk_lecturer_faculty              foreign key (faculty_id)    references faculty(id)      on delete cascade;
 alter table student                 add constraint fk_student_faculty               foreign key (faculty_id)    references faculty(id)      on delete cascade;
@@ -117,8 +113,20 @@ alter table class                   add constraint fk_class_classroom           
 alter table registration_results    add constraint fk_registration_results_student  foreign key (student_id)    references student(id)      on delete cascade;
 alter table registration_results    add constraint fk_registration_results_class    foreign key (class_id)      references class(id)        on delete cascade;
 
--- select
---     id,
---     concat(address, "_", building, floor, lpad(room, 2, "0")) as room
--- from `classroom`
--- where building = "i";
+delimiter $$
+create procedure get_all_classrooms_by_building (
+    _building varchar(4)
+) begin
+    select
+        id,
+        concat(
+            address,
+            "_",
+            building,
+            ifnull(floor, ""),
+            ifnull(lpad(room, 2, "0"), "")
+        ) as room
+    from `classroom`
+    where building = _building;
+end $$
+delimiter ;

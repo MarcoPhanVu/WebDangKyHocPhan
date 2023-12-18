@@ -1,15 +1,25 @@
 use user_course_registration;
 
-set foreign_key_checks = 0;
-truncate table faculty;
-truncate table classroom;
-truncate table course;
-truncate table lecturer;
-truncate table student;
-truncate table class;
-truncate table registration_results;
-set foreign_key_checks = 1;
+-- ═╣ empty the database ╠═════════════════════════════════════════════════════════════════════════
+delimiter $$
+create procedure empty_all_tables () begin
+    set foreign_key_checks = 0;
+    truncate table faculty;
+    truncate table classroom;
+    truncate table course;
+    truncate table lecturer;
+    truncate table student;
+    truncate table class;
+    truncate table registration_results;
+    set foreign_key_checks = 1;
+end $$
+delimiter ;
 
+call empty_all_tables();
+
+drop procedure empty_all_tables;
+
+-- ═╣ insert new data ╠════════════════════════════════════════════════════════════════════════════
 insert into faculty
     (name)
 values
