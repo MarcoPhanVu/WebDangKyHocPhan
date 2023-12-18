@@ -37,15 +37,15 @@ use `user_course_registration`;
 -- have no key ----------------------------------
 create table faculty (
     id                  int unsigned        not null    auto_increment,
-    name                varchar(100),
+    name                varchar(50),
     
     primary key (id)
 );
 
 create table classroom (
     id                  int unsigned        not null    auto_increment,
-    address             varchar(100),
-    building            char(1),
+    address             varchar(3),
+    building            varchar(4),
     floor               tinyint unsigned,
     room                tinyint unsigned,
     
@@ -66,7 +66,7 @@ create table course (
 
 create table lecturer (
     id                  int unsigned        not null    auto_increment,
-    name                varchar(100),
+    name                varchar(70),
 
     faculty_id          int unsigned        not null,
     
@@ -75,8 +75,8 @@ create table lecturer (
 
 create table student (
     id                  int unsigned        not null    auto_increment,
-    firstname           varchar(100),
-    lastname            varchar(20),
+    firstname           varchar(20),
+    lastname            varchar(50),
 
     faculty_id          int unsigned        not null,
     
@@ -116,3 +116,9 @@ alter table class                   add constraint fk_class_course              
 alter table class                   add constraint fk_class_classroom               foreign key (classroom_id)  references classroom(id)    on delete cascade;
 alter table registration_results    add constraint fk_registration_results_student  foreign key (student_id)    references student(id)      on delete cascade;
 alter table registration_results    add constraint fk_registration_results_class    foreign key (class_id)      references class(id)        on delete cascade;
+
+-- select
+--     id,
+--     concat(address, "_", building, floor, lpad(room, 2, "0")) as room
+-- from `classroom`
+-- where building = "i";
