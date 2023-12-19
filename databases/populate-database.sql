@@ -47,7 +47,7 @@ values
 ;
 
 insert into `classroom`
-    (`address`, `building`, `floor`,`room`)
+    (`branch`, `building`, `floor`,`room`)
 values
 -- building A
     -- floor 2

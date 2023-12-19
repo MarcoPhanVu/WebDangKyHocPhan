@@ -40,7 +40,7 @@ create table `faculty` (
 
 create table `classroom` (
     `id`                int unsigned        not null    auto_increment,
-    `address`           varchar(3),
+    `branch`            varchar(3),
     `building`          varchar(4),
     `floor`             tinyint unsigned,
     `room`              tinyint unsigned,
@@ -109,11 +109,14 @@ alter table `registration_results`  add constraint `fk_registration_results_stud
 alter table `registration_results`  add constraint `fk_registration_results_class`      foreign key (`class_id`)        references `class`(`id`)        on delete cascade;
 
 delimiter $$
-create procedure `get_all_classrooms_by_building` (_building varchar(4)) begin
+create procedure `get_all_classrooms_by_building` (
+    _branch     varchar(3),
+    _building   varchar(4)
+) begin
     select
         `classroom`.`id` as room_id,
         concat(
-            `classroom`.`address`,
+            `classroom`.`branch`,
             "_",
             `classroom`.`building`,
             ifnull(`classroom`.`floor`, ""),
@@ -122,6 +125,6 @@ create procedure `get_all_classrooms_by_building` (_building varchar(4)) begin
     from
         `classroom`
     where
-        `classroom`.`building` = _building;
+        `classroom`.`branch` = _branch and `classroom`.`building` = _building;
 end $$
 delimiter ;
