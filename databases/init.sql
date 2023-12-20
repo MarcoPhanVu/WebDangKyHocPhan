@@ -114,14 +114,13 @@ create procedure `get_all_classrooms_by_building` (
     _building   varchar(4)
 ) begin
     select
-        `classroom`.`id` as room_id,
+        `classroom`.`id`                                    as `room_id`,
         concat(
             `classroom`.`branch`,
             "_",
             `classroom`.`building`,
             ifnull(`classroom`.`floor`, ""),
-            ifnull(lpad(`classroom`.`room`, 2, "0"), "")
-        ) as room
+            ifnull(lpad(`classroom`.`room`, 2, "0"), ""))   as `room`
     from
         `classroom`
     where
@@ -155,12 +154,12 @@ create procedure `get_all_course` () begin
         `class`.`end_date`                                  as `end_date`,
         `lecturer`.`name`                                   as `lecturer_name`
     from
-        class
-    inner join lecturer
-            on class.lecturer_id = lecturer.id
-    inner join course
-            on class.course_id = course.id
-    inner join classroom
-            on class.classroom_id = classroom.id;
+        `class`
+    inner join `lecturer`
+            on `class`.`lecturer_id` = `lecturer`.`id`
+    inner join `course`
+            on `class`.`course_id` = `course`.`id`
+    inner join `classroom`
+            on `class`.`classroom_id` = `classroom`.`id`;
 end $$
 delimiter ;
