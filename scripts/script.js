@@ -4,6 +4,7 @@ $( document ).ready(function() {
     const displaySelection = document.querySelectorAll('[data-target]');
     const displayers = document.querySelectorAll(".displayer");
     
+    console.log(displaySelection)
     
     displaySelection.forEach(selection => {
         selection.addEventListener("click", (ev) => {
@@ -35,17 +36,19 @@ $( document ).ready(function() {
                 $(this).removeClass('selected');
             });
             $(this).addClass('selected');
-            
-            
-            $.ajax({
-                type: 'post',
-                url: 'course-item.php'
-            });
         });
     });
     
+
+    $.ajax({
+        type: 'POST',
+        url: './pages/components/course-queried.php',
+        data: "this is data",
+        ajaxed: "Well, it is what it is"
+    });
     // console.log(displaySelection);
     // console.log(displayers);
 });    
 
 
+// console.log(fetch("https://reqres.in/api/users/2"));
