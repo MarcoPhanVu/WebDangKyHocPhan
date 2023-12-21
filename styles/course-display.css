@@ -1,4 +1,12 @@
-.course-selector > :nth-child(n) {
+#faculty-selector {
+    background-color: bisque;
+}
+
+#course-selector {
+    
+}
+
+#course-selector > :nth-child(n) {
     cursor: pointer;
     padding: 4px 12px;
     background-color: rgb(44, 121, 121);
@@ -8,8 +16,7 @@
     margin-right: 4px;
 }
 
-
-.course-selector > :nth-child(n).selected {
+#course-selector > :nth-child(n).selected {
     background-color: rgb(80, 197, 113);
 }
 

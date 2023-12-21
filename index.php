@@ -13,12 +13,12 @@
 	<a href="./pages/learning.php">TO LEARNING</a>
 	<header class="row">
 		<div class="home-link">
-			<a href="./index.html"class="mb-0 fs-3 notYet">
+			<a href="./index.php"class="mb-0 fs-3 notYet">
 				Trang chủ
 			</a>
 		</div>
 		<div class="banner-container">
-			<a href="./index.html">
+			<a href="./index.php">
 				<img src="./assets/HCMUEBanner.jpg" alt="HCMUE Banner nha">
 			</a>
 		</div>
