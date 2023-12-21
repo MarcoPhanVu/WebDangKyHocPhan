@@ -2,10 +2,10 @@
 	define("DB_HOST", "localhost");
 	define("DB_USER", "root");
 	define("DB_PASS", "");
-	define("DB_NAME", "dkhp");
-	define("DB_PORT", "2206");
+	define("DB_NAME", "user_course_registration");
+	define("DB_PORT", "3306");
 
-	define("SITEURL", "http://localhost/wallet-manager/");
+	define("SITEURL", "http://localhost/dkhp/");
 
 	$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
@@ -15,5 +15,4 @@
 	} else {
 		// echo "Connection established";
 	}
-
 ?>
