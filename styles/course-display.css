@@ -1,41 +1,59 @@
+/* COURSE SELECT FORM */
+#course-select-form {
+    background-color: rgb(196, 219, 255);
+    display: flex;
+    padding: 12px;
+    gap: 24px;
+}
+
+#course-select-form > label {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#course-select-form > input {
+    padding: 6px 12px;
+}
+
 #faculty-selector {
-    background-color: bisque;
+    background-color: rgb(247, 132, 112);
+    padding: 6px 12px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    text-align: center;
 }
 
 #course-selector {
-    
-}
-
-#course-selector > :nth-child(n) {
-    cursor: pointer;
-    padding: 4px 12px;
-    background-color: rgb(44, 121, 121);
+    padding: 6px 12px;
+    background-color: rgb(92, 176, 176);
     display: inline-block;
     color: #fff;
     border: none;
     margin-right: 4px;
+    word-wrap: normal;
+    width: 300px;
+    /* text-align: center; */
 }
 
 #course-selector > :nth-child(n).selected {
     background-color: rgb(80, 197, 113);
 }
 
-.course-option {
+
+/* COURSE PRECISE SELECT FORM */
+.course-item {
     position: relative;
     width: 90%;
     height: 80px;
-    background-color: blanchedalmond;
+    background-color: rgb(255, 158, 242);
     margin-bottom: 4px;
     cursor: pointer;
     display: flex;
     flex-direction: row;
 }
 
-.course-option:hover {
-    background-color: rgb(255, 211, 145);
-}
-
-.course-option > .info-container > .main-info {
-    display: flex;
-    background-color: rgb(211, 198, 251);
+.course-item:hover {
+    background-color: rgba(149, 246, 255, 0.379);
 }
