@@ -4,6 +4,8 @@
     display: flex;
     padding: 12px;
     gap: 24px;
+    display: flex;
+    align-items: center;
 }
 
 #course-select-form > label {

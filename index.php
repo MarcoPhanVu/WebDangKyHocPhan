@@ -10,7 +10,7 @@
 </head>
 <body>
 	<?php include "./server/connection.php"?>
-	<a href="./pages/learning.php">TO LEARNING</a>
+	<!-- <a href="./pages/learning.php">TO LEARNING</a> -->
 	<?php
 	session_start();
 	?>

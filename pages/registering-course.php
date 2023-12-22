@@ -42,7 +42,7 @@
 
                     $course_name = $course_list[1];
 
-                    echo "<p class='course-name'>Selected Course: " . $course_name . "</p>";
+                    echo "<label class='course-name'>Selected Course: " . $course_name . "</label>";
                 }
             ?>
             
