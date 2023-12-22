@@ -46,8 +46,6 @@ $( document ).ready(function() {
         data: "this is data",
         ajaxed: "Well, it is what it is"
     });
-    // console.log(displaySelection);
-    // console.log(displayers);
 });    
 
 
