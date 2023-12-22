@@ -1,20 +1,5 @@
 <?php
-	define("DB_HOST", "localhost");
-	define("DB_USER", "root");
-	define("DB_PASS", "");
-	define("DB_NAME", "user_course_registration");
-	define("DB_PORT", "3306");
-
-	define("SITEURL", "http://localhost/CourseRegistering/");
-
-$connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-
-// // Check connection
-// if ($connection -> connect_error) {
-// 	die("[Connection failed]: " . $connection->connect_error);
-// } else {
-// 	// echo "Connection established";
-// }
+define("SITEURL", "http://localhost/CourseRegistering/");
 
 class DataProvider {
 	private const DATABASE_HOST = "localhost";
@@ -51,9 +36,12 @@ class DataProvider {
 			echo "Error: " . $e->getMessage();
 		}
 
-		$result = $connection->query($query);
-		$this->close_connection($connection);
-
+		if ($connection != null) {
+			// $result = $connection?->query($query); // null safe operator
+			$result = $connection->query($query);
+			$this->close_connection($connection);
+		}
+		
 		return $result;
 	}
 }
