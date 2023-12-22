@@ -52,9 +52,9 @@
     </div>
     <!-- AFTER REQUESTED FOR FACULTY ID -->
     <div class="course-displayer">
-        <form action="<?php SITEURL ?>" id="course-precise-select-form" method="GET">
+        <div class="course-precise-select-form">
             <?php
-            if (isset($_GET["faculty-id"])) {
+            if (isset($_GET["faculty-id"]) && !isset($_GET["course-id"])) {
                 // print_r($_GET);
                 $course_query = "SELECT * FROM course WHERE faculty_id = " . $_GET["faculty-id"];
                 $course_query_result = mysqli_query($connection, $course_query);
@@ -66,22 +66,26 @@
                     $course_name = $course["name"];
                     $course_number_of_credits = $course["number_of_credits"];
                     $course_type = $course["type"];
-        
+                    
+                    echo "<form action='" . SITEURL . "' method='GET'>";
+                    echo "<input type='hidden' name='faculty-id' value='" . $_GET['faculty-id'] . "'>";
                     include './pages/components/course-item.php';
+                    echo "</form>";
                 }
-            } else {
-                echo "NOTHING FROM COURSE DISPLAYER, no facultyID";
             }
+            // else {
+            //     echo "NOTHING FROM COURSE DISPLAYER, no facultyID";
+            // }
 
             ?>
-        </form>
+        </div>
     </div>
 
     <!-- AFTER REQUESTED FOR COURSE ID -->
     <div class="class-displayer">
         <form action="<?php SITEURL ?>" id="course-precise-select-form" method="GET">
             <?php
-            if (isset($_GET["course-id"])) {
+            if (isset($_GET["faculty-id"]) && isset($_GET["course-id"])) {
                 $class_query = "SELECT * FROM class WHERE course_id = " . $_GET["course-id"];
                 // echo "CHECK THIS OUT: $class_query <br>";
                 $class_query_result = mysqli_query($connection, $class_query);
@@ -96,11 +100,14 @@
                     $lecturer_id = $class["lecturer_id"]; 
                     $course_id = $class["course_id"]; 
                     $classroom_id = $class["classroom_id"]; 
+                    $class_designation = $_GET['faculty-id'] . "." . $_GET["course-id"] . "." . $class_id;
+                    
                     include './pages/components/class-item.php';
                 }
-            } else {
-                echo "NOTHING FROM CLASS DISPLAYER, no courseID";
             }
+            // else {
+            //     echo "NOTHING FROM CLASS DISPLAYER, no courseID";
+            // }
             ?>
         </form>
     </div>
