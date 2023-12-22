@@ -5,7 +5,7 @@
 	define("DB_NAME", "user_course_registration");
 	define("DB_PORT", "3306");
 
-	define("SITEURL", "http://localhost/CourseRegisteringWebsite/");
+	define("SITEURL", "http://localhost/CourseRegistering/");
 
 $connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 
