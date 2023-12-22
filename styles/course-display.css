@@ -75,7 +75,42 @@
 
 /* CLASS FORM */
 .class-item {
-    
     background-color: rgb(176, 255, 177);
+    margin: 4px;
+    position: relative;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.class-item > .class-designation {
+    flex: 0.25;
+    flex-grow: 10px;
+}
+
+.class-item > .class-info {
+    background-color: rgb(245, 255, 199);
+    flex: 12;
+}
+
+.class-item > .class-info p {
+    padding: 0;
+    margin: 0;
+}
+
+.class-item > .class-info > .righty,
+.class-item > .class-info > .lefty {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.class-item > .class-info > .lefty {
+    float: left;
+    text-align: left;
 }
 
