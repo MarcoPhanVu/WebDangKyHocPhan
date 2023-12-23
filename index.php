@@ -12,22 +12,26 @@
 	<?php include "./server/connection.php"?>
 	<!-- <a href="./pages/learning.php">TO LEARNING</a> -->
 	<?php
-	session_start();
+
 	?>
 	<header class="row">
 		<div class="home-link">
+			<img src="https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-DH-Su-Pham-TPHCM-HCMUE.png" alt="HCMUE Banner nha" style="height: 80px;">
 			<a href="./index.php"class="mb-0 fs-3 notYet">
 				Trang chủ
 			</a>
 		</div>
 		<div class="banner-container">
 			<a href="./index.php">
-				<img src="./assets/HCMUEBanner.jpg" alt="HCMUE Banner nha">
+				<img src="https://hcmue.edu.vn/images/Logo_Banner_SP/Logo-HCMUE---ENG-2.png" alt="HCMUE Banner nha" style="height: 100px;">
 			</a>
 		</div>
 		<div class="auth-action">
-			<p class="user-id notYet">47.01.104.045</p>
-			<p class="user-name notYet">Phan Vũ Tứn Em</p>
+			<?php 
+				echo "<p class='user-id notYet'>" . $_SESSION["user-type"] . "</p>";
+				echo "<p class='user-name notYet'>" . $_SESSION["username"] . "</p>";
+			
+			?>
 			<!-- <p class="log-in">Đăng nhập</p>
 			<p class="sign-in">Đăng ký</p>
 			<p class="log-out">Đăng xuất</p> -->
@@ -43,7 +47,7 @@
 			<button class="btn-option" data-target="history">Lịch sử đăng ký</button>
 		</div>
 		
-		<div class="container display-section col-md-10">
+		<div class="display-section col-md-10">
 			<?php include "./pages/registering-course.php" ?>
 			<?php include "./pages/schedule.php" ?>
 			<?php include "./pages/course-info.php" ?>

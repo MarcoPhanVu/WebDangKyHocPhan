@@ -4,7 +4,7 @@
         type="radio" 
         name="class-id" 
         id="<?php echo $class_designation?>" 
-        value="cd<?php echo $class_designation?>"
+        value="<?php echo $class_id?>"
     >
     
     <div class="class-info">

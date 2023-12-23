@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Nunito', sans-serif;
+}
+
+body {
+    height: 100vh;
+    /* background-color: chocolate; */
+    display: flex;
+    align-items: center;
+}
+
+.form-container {
+    margin: auto;
+    width: 32%;
+    height: 60%;
+    max-width: 400px;
+    max-height: 600px;
+    background-color: rgb(229, 229, 255);
+    text-align: center;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid #000;
+    box-shadow: 4px 4px 10px #00000060;
+}
+
+.auth-form {
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form .role-select {
+    display: flex;
+    height: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.auth-form .role-select > label {
+    padding: 8px;
+}
+
+.auth-form > label {
+    /* background-color: cadetblue; */
+    min-width: 100px;
+    padding: 8px;
+    text-align: center;
+}
+
+.auth-form > label > input {
+    padding: 8px;
+    text-align: center;
+}
+
+.auth-form > .submit-btn {
+    padding: 8px;
+    text-align: center;
+    margin: auto;
+    margin-top: 24px;
+    border: none;
+    width: 20%;
+    cursor: pointer;
+    background-color: rgb(109, 109, 255);
+    color: white;
+    border-radius: 8px;
+}
