@@ -1,4 +1,15 @@
-<div class="displayer container" data-destination="registering-course">
+<div class="displayer 
+
+<?php
+    if (isset($_GET["course-id"]) || isset($_GET["faculty-id"])) {
+        echo "active";
+    }
+    else {
+        echo "hidden";
+    }
+?>
+
+" data-destination="registering-course">
     <div class="course-filter-tab">
         <h2 class="title">This is Registering-course</h2>
         <?php
@@ -83,7 +94,7 @@
 
     <!-- AFTER REQUESTED FOR COURSE ID -->
     <div class="class-displayer">
-        <form action="<?php SITEURL ?>" id="course-precise-select-form" method="GET">
+        <form action="<?php SITEURL ?>" id="class-select-form" method="GET">
             <?php
             if (isset($_GET["faculty-id"]) && isset($_GET["course-id"])) {
                 $class_query = "SELECT * FROM class WHERE course_id = " . $_GET["course-id"];
@@ -109,6 +120,8 @@
             //     echo "NOTHING FROM CLASS DISPLAYER, no courseID";
             // }
             ?>
+
+            <input type="submit" value="Đăng ký" for="class-select-form">
         </form>
     </div>
 

@@ -4,14 +4,14 @@
         type="radio" 
         name="class-id" 
         id="<?php echo $class_designation?>" 
-        value="cd<?php echo $class_designation?>"
+        value="<?php echo $class_id?>"
     >
     
     <div class="class-info">
         <div class="lefty">
             <?php
                 echo "<label>[$class_designation] - $course_name</label>";
-                echo "<p class='lecturer'>Lecturer: ";
+                echo "<p class='class-lecturer'>Lecturer: ";
                 
                 $query = "SELECT * FROM lecturer WHERE id=" . $lecturer_id;
                 $result = DataProvider::get_instance()->execute_query($query);
@@ -20,15 +20,15 @@
                 echo $lecturer['name'];
                 echo "</p>";
 
-                echo "<p class='attend-count'>Attended: 0";
+                echo "<p class='class-attendance'>Attended: 0";
                 echo "</p>";
             ?>
         </div>
         <div class="righty">
             <?php
-                echo "<p class='study-session'>Session: [$start_session] - [$end_session]</p>";
-                echo "<p class='study-date'>Date: $start_date - $end_date</p>";
-                echo "<p class=''>Location: ";
+                echo "<p class='class-session'>Time: " . $weekdays[date('w', strtotime($start_date))] . ", Session: [$start_session] - [$end_session]</p>";
+                echo "<p class='class-duration'>From $start_date to $end_date</p>";
+                echo "<p class='class-location'>Location: ";
                 
                 $query = "SELECT * FROM classroom WHERE id=" . $classroom_id;
                 $result = DataProvider::get_instance()->execute_query($query);

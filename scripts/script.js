@@ -4,9 +4,13 @@ $( document ).ready(function() {
     const displaySelection = document.querySelectorAll('[data-target]');
     const displayers = document.querySelectorAll(".displayer");
     
-    console.log(displaySelection)
+    console.log(displaySelection);
+    console.log(displayers);
     
     displaySelection.forEach(selection => {
+        // selection.classList.add("hidden");
+        // selection.classList.remove("active");
+
         selection.addEventListener("click", (ev) => {
             // console.log(ev);
             let target = selection.dataset.target;
