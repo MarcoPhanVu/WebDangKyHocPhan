@@ -91,8 +91,8 @@ create table `class` (
 
 -- many-to-many relationship --------------------
 create table `registration_results` (
-    `id`                int unsigned        not null    auto_increment,
-    `timestamp`         date                not null,
+    `id`                varchar(20)        not null,
+    `timestamp`         TIMESTAMP           not null,
 
     `student_id`        int unsigned        not null,
     `class_id`          int unsigned        not null,
