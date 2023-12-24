@@ -1,5 +1,5 @@
 <div class="displayer hidden" data-destination="course-info">
-    <h2 class="title">Course-Info</h2>
+    <h2 class="title">Course-Infadasdasdo</h2>
     <div class="course-info-list">
         <?php
         // $course_query = "SELECT * FROM `registration_results` AS r_r JOIN `class` as cl ON r_r.class_id = cl.id WHERE student_id = " . $_SESSION["user-id"];

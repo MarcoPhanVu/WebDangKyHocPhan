@@ -63,5 +63,5 @@
 	// COMMON VARS
 
 	$weekdays = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
-
+	date_default_timezone_set('Asia/Bangkok');
 ?>

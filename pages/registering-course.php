@@ -1,21 +1,21 @@
 <div class="displayer active
 
 <?php
-if (isset($_GET["course-id"]) || isset($_GET["faculty-id"])) {
-    echo "active";
-} else {
-    echo "hidden";
-}
+// if (isset($_GET["course-id"]) || isset($_GET["faculty-id"])) {
+//     echo "active";
+// } else {
+//     echo "hidden";
+// }
 ?>
 
 " data-destination="registering-course">
     <div class="course-filter-tab">
-        <h2 class="title">This is Registering-course</h2>
+        <h2 class="title">This is Registering-course
         <?php
-        // echo SITEURL;
-        // print_r ($_SERVER);
-        // print_r ($_SESSION);
+            // $timestamp = date("Y-m-d H:i:s");
+            // echo "Time=$timestamp";
         ?>
+        </h2>
         <form action="<?php echo SITEURL ?>" id="course-select-form" method="GET">
             <label for="faculty-selector">Faculty:
                 <select name="faculty-id" id="faculty-selector">
@@ -114,13 +114,14 @@ if (isset($_GET["course-id"]) || isset($_GET["faculty-id"])) {
 
                     include './pages/components/class-item.php';
                 }
+
+                echo "<input type='submit' value='Đăng ký' for='class-select-form'>";
             }
             // else {
             //     echo "NOTHING FROM CLASS DISPLAYER, no courseID";
             // }
             ?>
 
-            <input type="submit" value="Đăng ký" for="class-select-form">
         </form>
     </div>
 

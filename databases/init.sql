@@ -91,8 +91,18 @@ create table `class` (
 
 -- many-to-many relationship --------------------
 create table `registration_results` (
-    `id`                varchar(20)        not null,
+    `id`                varchar(20)         not null,
+
+    `student_id`        int unsigned        not null,
+    `class_id`          int unsigned        not null,
+    primary key (`id`)
+);
+
+-- many-to-many relationship --------------------
+create table `registration_histories` (
+    `id`                varchar(20)         not null,
     `timestamp`         TIMESTAMP           not null,
+    `action`            varchar(20)         not null,
 
     `student_id`        int unsigned        not null,
     `class_id`          int unsigned        not null,
@@ -100,14 +110,16 @@ create table `registration_results` (
 );
 
 -- ═╣ add foreign key ╠════════════════════════════════════════════════════════════════════════════
-alter table `course`                add constraint `fk_course_faculty`                  foreign key (`faculty_id`)      references `faculty`(`id`)      on delete cascade;
-alter table `lecturer`              add constraint `fk_lecturer_faculty`                foreign key (`faculty_id`)      references `faculty`(`id`)      on delete cascade;
-alter table `student`               add constraint `fk_student_faculty`                 foreign key (`faculty_id`)      references `faculty`(`id`)      on delete cascade;
-alter table `class`                 add constraint `fk_class_lecturer`                  foreign key (`lecturer_id`)     references `lecturer`(`id`)     on delete cascade;
-alter table `class`                 add constraint `fk_class_course`                    foreign key (`course_id`)       references `course`(`id`)       on delete cascade;
-alter table `class`                 add constraint `fk_class_classroom`                 foreign key (`classroom_id`)    references `classroom`(`id`)    on delete cascade;
-alter table `registration_results`  add constraint `fk_registration_results_student`    foreign key (`student_id`)      references `student`(`id`)      on delete cascade;
-alter table `registration_results`  add constraint `fk_registration_results_class`      foreign key (`class_id`)        references `class`(`id`)        on delete cascade;
+alter table `course`                    add constraint `fk_course_faculty`                      foreign key (`faculty_id`)      references `faculty`(`id`)      on delete cascade;
+alter table `lecturer`                  add constraint `fk_lecturer_faculty`                    foreign key (`faculty_id`)      references `faculty`(`id`)      on delete cascade;
+alter table `student`                   add constraint `fk_student_faculty`                     foreign key (`faculty_id`)      references `faculty`(`id`)      on delete cascade;
+alter table `class`                     add constraint `fk_class_lecturer`                      foreign key (`lecturer_id`)     references `lecturer`(`id`)     on delete cascade;
+alter table `class`                     add constraint `fk_class_course`                        foreign key (`course_id`)       references `course`(`id`)       on delete cascade;
+alter table `class`                     add constraint `fk_class_classroom`                     foreign key (`classroom_id`)    references `classroom`(`id`)    on delete cascade;
+alter table `registration_results`      add constraint `fk_registration_results_student`        foreign key (`student_id`)      references `student`(`id`)      on delete cascade;
+alter table `registration_results`      add constraint `fk_registration_results_class`          foreign key (`class_id`)        references `class`(`id`)        on delete cascade;
+alter table `registration_histories`    add constraint `fk_registration_histories_student`      foreign key (`student_id`)      references `student`(`id`)      on delete cascade;
+alter table `registration_histories`    add constraint `fk_registration_histories_class`        foreign key (`class_id`)        references `class`(`id`)        on delete cascade;
 
 delimiter $$
 create procedure `get_all_classrooms_by_building` (
