@@ -127,7 +127,7 @@
     text-align: left;
 }
 
-.class-displayer > input {
+.class-displayer > form > input {
     padding: 6px 16px;
     background-color: rgb(57, 197, 197);
     color: white;

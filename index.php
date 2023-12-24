@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
-	<?php include "./server/connection.php"?>
+	<?php include "./server/connection.php" ?>
 	<!-- <a href="./pages/learning.php">TO LEARNING</a> -->
 	<?php
 
@@ -17,7 +19,7 @@
 	<header class="row">
 		<div class="home-link">
 			<img src="https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-DH-Su-Pham-TPHCM-HCMUE.png" alt="HCMUE Banner nha" style="height: 80px;">
-			<a href="./index.php"class="mb-0 fs-3 notYet">
+			<a href="./index.php" class="mb-0 fs-3 notYet">
 				Trang chủ
 			</a>
 		</div>
@@ -27,14 +29,13 @@
 			</a>
 		</div>
 		<div class="auth-action">
-			<?php 
-				echo "<p class='user-id notYet'>" . $_SESSION["user-type"] . "</p>";
-				echo "<p class='user-name notYet'>" . $_SESSION["username"] . "</p>";
-			
+			<?php
+				if (!isset($_SESSION["user-type"])) {
+					header('Location: ./pages/login.php');
+				}
+				echo "<p class='user-id'>" . $_SESSION["user-type"] . "</p>";
+				echo "<p class='user-name'>" . $_SESSION["username"] . "</p>";
 			?>
-			<!-- <p class="log-in">Đăng nhập</p>
-			<p class="sign-in">Đăng ký</p>
-			<p class="log-out">Đăng xuất</p> -->
 		</div>
 	</header>
 	<div id="main-container">
@@ -46,7 +47,7 @@
 			<button class="btn-option" data-target="similar-course">Học phần tương đương</button>
 			<button class="btn-option" data-target="history">Lịch sử đăng ký</button>
 		</div>
-		
+
 		<div class="display-section col-md-10">
 			<?php include "./pages/registering-course.php" ?>
 			<?php include "./pages/schedule.php" ?>
@@ -59,4 +60,5 @@
 
 	<script src="./scripts/script.js"></script>
 </body>
+
 </html>

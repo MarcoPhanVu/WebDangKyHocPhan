@@ -1,12 +1,11 @@
-<div class="displayer 
+<div class="displayer active
 
 <?php
-    if (isset($_GET["course-id"]) || isset($_GET["faculty-id"])) {
-        echo "active";
-    }
-    else {
-        echo "hidden";
-    }
+if (isset($_GET["course-id"]) || isset($_GET["faculty-id"])) {
+    echo "active";
+} else {
+    echo "hidden";
+}
 ?>
 
 " data-destination="registering-course">
@@ -24,13 +23,13 @@
                     $faculty_query = "SELECT * FROM faculty";
                     $faculty_query_result = mysqli_query($connection, $faculty_query);
                     $faculty_list = mysqli_fetch_all($faculty_query_result, MYSQLI_ASSOC);
-    
+
                     foreach ($faculty_list as $faculty) { // List of Faculties
                         $faculty_id = $faculty["id"];
                         $faculty_name = $faculty["name"];
-                        
+
                         // IF SELECTED COURSE
-                        
+
                         echo '<option 
                         class="faculty-selector-item" 
                         data-faculty-id="' . $faculty_id . '"';
@@ -45,18 +44,18 @@
                 </select>
             </label>
             <?php
-                // DISPLAY SELECTED COURSE
-                if (isset($_GET["course-id"])) {
-                    $course_query = "SELECT * FROM course WHERE id = " . $_GET["course-id"];
-                    $course_query_result = mysqli_query($connection, $course_query);
-                    $course_list = mysqli_fetch_row($course_query_result);
+            // DISPLAY SELECTED COURSE
+            if (isset($_GET["course-id"])) {
+                $course_query = "SELECT * FROM course WHERE id = " . $_GET["course-id"];
+                $course_query_result = mysqli_query($connection, $course_query);
+                $course_list = mysqli_fetch_row($course_query_result);
 
-                    $course_name = $course_list[1];
+                $course_name = $course_list[1];
 
-                    echo "<label class='course-name'>Selected Course: " . $course_name . "</label>";
-                }
+                echo "<label class='course-name'>Selected Course: " . $course_name . "</label>";
+            }
             ?>
-            
+
             <input type="hidden" name="requested-faculty" value="true">
             <input type="submit" value="Search">
         </form>
@@ -70,14 +69,14 @@
                 $course_query = "SELECT * FROM course WHERE faculty_id = " . $_GET["faculty-id"];
                 $course_query_result = mysqli_query($connection, $course_query);
                 $course_list = mysqli_fetch_all($course_query_result, MYSQLI_ASSOC);
-        
+
                 foreach ($course_list as $course) { // Create List of courses to choose
                     $course_id = $course["id"];
                     $course_faculty = $course["faculty_id"];
                     $course_name = $course["name"];
                     $course_number_of_credits = $course["number_of_credits"];
                     $course_type = $course["type"];
-                    
+
                     echo "<form action='" . SITEURL . "' method='GET'>";
                     echo "<input type='hidden' name='faculty-id' value='" . $_GET['faculty-id'] . "'>";
                     include './pages/components/course-item.php';
@@ -101,18 +100,18 @@
                 // echo "CHECK THIS OUT: $class_query <br>";
                 $class_query_result = mysqli_query($connection, $class_query);
                 $class_list = mysqli_fetch_all($class_query_result, MYSQLI_ASSOC);
-        
+
                 foreach ($class_list as $class) { // Create List of classes to choose
-                    $class_id = $class["id"]; 
-                    $start_session = $class["start_session"]; 
-                    $end_session = $class["end_session"]; 
-                    $start_date = $class["start_date"]; 
-                    $end_date = $class["end_date"]; 
-                    $lecturer_id = $class["lecturer_id"]; 
-                    $course_id = $class["course_id"]; 
-                    $classroom_id = $class["classroom_id"]; 
+                    $class_id = $class["id"];
+                    $start_session = $class["start_session"];
+                    $end_session = $class["end_session"];
+                    $start_date = $class["start_date"];
+                    $end_date = $class["end_date"];
+                    $lecturer_id = $class["lecturer_id"];
+                    $course_id = $class["course_id"];
+                    $classroom_id = $class["classroom_id"];
                     $class_designation = $_GET['faculty-id'] . "." . $_GET["course-id"] . "." . $class_id;
-                    
+
                     include './pages/components/class-item.php';
                 }
             }
@@ -131,8 +130,9 @@
 // echo "<p>SOMESHIT</p>";
 ?>
 
-<?php // include './pages/components/course-all.php' ?>
+<?php // include './pages/components/course-all.php' 
+?>
 
 <?php
-    // print_r(array_keys($course_list[0]));cd
+// print_r(array_keys($course_list[0]));cd
 ?>

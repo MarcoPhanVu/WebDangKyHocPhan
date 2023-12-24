@@ -1,31 +1,32 @@
-<div class="displayer active" data-destination="course-info">
+<div class="displayer hidden" data-destination="course-info">
     <h2 class="title">Course-Info</h2>
     <div class="course-info-list">
-        <div class="course-info-item">
-            <h4 class="title">Course ID: [1.12] - Phát triển ứng dụng web</h4>
-            <div class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat consectetur necessitatibus et nulla illum est quos harum odit cumque officiis eum similique soluta sit voluptas, iusto, in veniam voluptates explicabo?</div>
-        </div>
-        <div class="course-info-item">
-            <h4 class="title">Course ID: [1.13] - Phát triển ứng dụng web</h4>
-            <div class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat consectetur necessitatibus et nulla illum est quos harum odit cumque officiis eum similique soluta sit voluptas, iusto, in veniam voluptates explicabo?</div>
-        </div>
-        <div class="course-info-item">
-            <h4 class="title">Course ID: [1.16] - Phát triển ứng dụng web</h4>
-            <div class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat consectetur necessitatibus et nulla illum est quos harum odit cumque officiis eum similique soluta sit voluptas, iusto, in veniam voluptates explicabo?</div>
-        </div>
-        <div class="course-info-item">
-            <h4 class="title">Course ID: [1.20] - Phát triển ứng dụng web</h4>
-            <div class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat consectetur necessitatibus et nulla illum est quos harum odit cumque officiis eum similique soluta sit voluptas, iusto, in veniam voluptates explicabo?</div>
-        </div>
-        <div class="course-info-item">
-            <h4 class="title">Course ID: [1.29] - Phát triển ứng dụng web</h4>
-            <div class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat consectetur necessitatibus et nulla illum est quos harum odit cumque officiis eum similique soluta sit voluptas, iusto, in veniam voluptates explicabo?</div>
-        </div>
-        <div class="course-info-item">
-            <h4 class="title">Course ID: [1.53] - Phát triển ứng dụng web</h4>
-            <div class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat consectetur necessitatibus et nulla illum est quos harum odit cumque officiis eum similique soluta sit voluptas, iusto, in veniam voluptates explicabo?</div>
-        </div>
+        <?php
+        // $course_query = "SELECT * FROM `registration_results` AS r_r JOIN `class` as cl ON r_r.class_id = cl.id WHERE student_id = " . $_SESSION["user-id"];
+        $course_query = "SELECT 
+        cou.id AS cid,
+        cou.name AS cname,
+        cou.number_of_credits AS credit,
+        fac.id AS fid,
+        fac.name AS fname
+        FROM course AS cou
+        JOIN faculty AS fac ON cou.faculty_id = fac.id";
+        $course_query_result = mysqli_query($connection, $course_query);
+        $course_list = mysqli_fetch_all($course_query_result, MYSQLI_ASSOC);
 
+        foreach ($course_list as $course) {
+            $cid = $course["cid"];
+            $cname = $course["cname"];
+            $credit = $course["credit"];
+            $fid = $course["fid"];
+            $fname = $course["fname"];
+
+            echo "<div class='course-info-item'><h4 class='title'>Course ID: ";
+            echo "[$fid.$cid] - $cname";
+            echo "</h4><div class='desc'>Môn này tên là: $cname, với số tín chỉ là $credit, thuộc khoa $fname";
+            echo "và lorem ipsum, dolor sit amet.</div></div>";
+        }
+        ?>
     </div>
 
 </div>
