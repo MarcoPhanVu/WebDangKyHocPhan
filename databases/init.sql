@@ -141,38 +141,95 @@ create procedure `get_all_classrooms_by_building` (
 end $$
 
 create procedure `get_all_course` () begin
+    with
+        class_cte as (
+            select
+                concat("Tiết (",
+                       `class`.`start_session`, "-",
+                       `class`.`end_session`, ")")                      as `session`,
+                `class`.`start_date`                                    as `start_date`,
+                `class`.`end_date`                                      as `end_date`,
+                `class`.`lecturer_id`                                   as `lecturer_id`,
+                `class`.`course_id`                                     as `course_id`,
+                `class`.`classroom_id`                                  as `classroom_id`
+            from
+                `class`
+        ),
+        classroom_cte as (
+            select
+                `classroom`.`id`                                        as `id`,
+                concat(`classroom`.`branch`,
+                       "_",
+                       `classroom`.`building`,
+                       ifnull(`classroom`.`floor`, ""),
+                       ifnull(lpad(`classroom`.`room`, 2, "0"), ""))    as `room`
+            from
+                `classroom`
+        ),
+        lecturer_cte as (
+            select
+                `lecturer`.`id`                                         as `id`,
+                `lecturer`.`name`                                       as `name`
+            from
+                `lecturer`
+        ),
+        course_cte as (
+            select
+                `course`.`id`                                           as `id`,
+                case
+                    when `course`.`type` = 2 then "Chuyên ngành"
+                    when `course`.`type` = 1 then "Cơ sở ngành"
+                    else "Cơ sở chung"
+                end                                                     as `type`,
+                `course`.`name`                                         as `name`,
+                `course`.`number_of_credits`                            as `number_of_credits`,
+                lpad(`course`.`faculty_id`, 2, "0")                     as `faculty_id`,
+                concat(lpad(`course`.`faculty_id`, 2, "0"), ".",
+                       `course`.`type`, ".",
+                       lpad(`course`.`id`, 5, "0"))                     as `course_display_id`
+            from
+                `course`
+        ),
+        new_class1 as (
+            select
+                `class_cte`.`start_date`            as `start_date`,
+                `class_cte`.`end_date`              as `end_date`,
+                `class_cte`.`session`               as `session`,
+                `classroom_cte`.`room`              as `room`,
+                `class_cte`.`lecturer_id`           as `lecturer_id`,
+                `class_cte`.`course_id`             as `course_id`
+            from
+                `class_cte`
+            inner join `classroom_cte`
+                    on `class_cte`.`classroom_id` = `classroom_cte`.`id`
+        ),
+        new_class2 as (
+            select
+                `new_class1`.`start_date`           as `start_date`,
+                `new_class1`.`end_date`             as `end_date`,
+                `new_class1`.`session`              as `session`,
+                `new_class1`.`room`                 as `room`,
+                `lecturer_cte`.`name`               as `lecturer_name`,
+                `new_class1`.`course_id`            as `course_id`
+            from
+                `new_class1`
+            inner join `lecturer_cte`
+                    on `new_class1`.`lecturer_id` = `lecturer_cte`.`id`
+        )
     select
-        lpad(`lecturer`.`faculty_id`, 2, "0")               as `faculty_id`,
-        concat(
-            convert(`course`.`type`, char),
-            lpad(`course`.`id`, 5, "0"))                    as `course_id`,
-        `course`.`name`                                     as `course_name`,
-        `course`.`number_of_credits`                        as `number_of_credits`,
-        case
-            when `course`.`type` = 2 then "chuyên ngành"
-            when `course`.`type` = 1 then "cơ sở ngành"
-            else "cơ sở chung"
-        end                                                 as `course_type`,
-        concat(
-            "Tiết (",
-            `class`.`start_session`, "-",
-            `class`.`end_session`, ")")                     as `session`,
-        concat(
-            `classroom`.`branch`,
-            "_",
-            `classroom`.`building`,
-            ifnull(`classroom`.`floor`, ""),
-            ifnull(lpad(`classroom`.`room`, 2, "0"), ""))   as `room`,
-        `class`.`start_date`                                as `start_date`,
-        `class`.`end_date`                                  as `end_date`,
-        `lecturer`.`name`                                   as `lecturer_name`
+        `course_cte`.`faculty_id`           as `faculty_id`,
+        `course_cte`.`course_display_id`    as `course_id`,
+        `course_cte`.`name`                 as `course_name`,
+        `course_cte`.`number_of_credits`    as `number_of_credits`,
+        `course_cte`.`type`                 as `course_type`,
+        `new_class2`.`start_date`           as `start_date`,
+        `new_class2`.`end_date`             as `end_date`,
+        `new_class2`.`session`              as `session`,
+        `new_class2`.`room`                 as `room`,
+        `new_class2`.`lecturer_name`        as `lecturer_name`
     from
-        `class`
-    inner join `lecturer`
-            on `class`.`lecturer_id` = `lecturer`.`id`
-    inner join `course`
-            on `class`.`course_id` = `course`.`id`
-    inner join `classroom`
-            on `class`.`classroom_id` = `classroom`.`id`;
+        `new_class2`
+    inner join `course_cte`
+            on `new_class2`.`course_id` = `course_cte`.`id`;
 end $$
 delimiter ;
