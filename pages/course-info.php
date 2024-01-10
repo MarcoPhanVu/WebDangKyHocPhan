@@ -1,54 +1,30 @@
-<div class="displayer container" data-destination="course-info">
-    <h2 class="title">This is Course-Info</h2>
+<div class="displayer hidden" data-destination="course-info">
+    <h2 class="title">Course-Infor</h2>
+    <div class="course-info-list">
+        <?php
+        $query = "
+            SELECT 
+                cou.id                  AS cid,
+                cou.name                AS cname,
+                cou.number_of_credits   AS credit,
+                fac.id                  AS fid,
+                fac.name                AS fname
+            FROM
+                course AS cou
+            INNER JOIN faculty AS fac
+                    ON cou.faculty_id = fac.id";
+        $result = DataProvider::get_instance()->execute_query($query);
+        $course_list = $result->fetchAll();
 
-    <label for="class-id" class="class-item">
-    someshid
-        <input 
-            class="class-designation" 
-            type="radio" 
-            name="class-id" 
-            id="emptyhehe" 
-            value="emptyhehe"
-        >
-    </label>
-    <label for="class-id" class="class-item">
-    someshid
-        <input 
-            class="class-designation" 
-            type="radio" 
-            name="class-id" 
-            id="emptyhihi" 
-            value="emptyhihi"
-        >
-    </label>
-    <label for="class-id" class="class-item">
-    someshid
-        <input 
-            class="class-designation" 
-            type="radio" 
-            name="class-id" 
-            id="emptyhuhu" 
-            value="emptyhuhu"
-        >
-    </label>
-    <label for="class-id" class="class-item">
-    someshid
-        <input 
-            class="class-designation" 
-            type="radio" 
-            name="class-id" 
-            id="emptyhoho" 
-            value="emptyhoho"
-        >
-    </label>
+        foreach ($course_list as $course) {
+            $cid = $course["cid"];
+            $cname = $course["cname"];
+            $credit = $course["credit"];
+            $fid = $course["fid"];
+            $fname = $course["fname"];
 
-    <p>Please select your age:</p>
-    <input type="radio" id="age1" name="age" value="30">
-    <label for="age1">0 - 30</label><br>
-    <input type="radio" id="age2" name="age" value="60">
-    <label for="age2">31 - 60</label><br>  
-    <input type="radio" id="age3" name="age" value="100">
-    <label for="age3">61 - 100</label><br><br>
-    <input type="submit" value="Submit">
-
+            include realpath(__DIR__ . "/components/course-infor-item.php");
+        }
+        ?>
+    </div>
 </div>

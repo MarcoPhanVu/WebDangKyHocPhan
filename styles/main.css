@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
-
 @import url("./course-display.css");
 
 * {
@@ -9,23 +8,17 @@
 	font-family: 'Nunito', sans-serif;
 }
 
-
-
-
 /* CUSTOM */
 .hidden {
 	display: none;
 }
 
-
-
-
 #main-container {
-	background-color: brown;
+	/* background-color: brown; */
 	padding: 36px;
 	display: block;
 	height: 100vh;
-} 
+}
 
 header {
 	display: flex;
@@ -33,11 +26,12 @@ header {
 	flex-wrap: none;
 	gap: 16px;
 	justify-content: space-between;
+	background-color: rgb(240, 240, 255);
 }
 
-header > :nth-child(n) {
+header> :nth-child(n) {
 	flex: 1;
-	background-color: rgb(183, 183, 254);
+	/* background-color: rgb(240, 240, 255); */
 	display: flex;
 	align-items: flex-end;
 	/* height: 50px; */
@@ -45,21 +39,32 @@ header > :nth-child(n) {
 	padding: 8px;
 }
 
-header > .home-link > a {
+header>.home-link {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+header>.home-link>a {
 	text-decoration: none;
+	align-self: center;
 }
 
-header > .banner-container {
+header>.banner-container {
 	flex: 3;
-	background-color: coral;
+	/* background-color: coral; */
+	background-color: rgb(160, 160, 255);
+	display: flex;
+	align-items: center;
+
 }
 
-header > .auth-action {
+header>.auth-action {
 	justify-content: space-around;
 
 }
 
-header > .auth-action > p {
+header>.auth-action>p {
 	cursor: pointer;
 	margin: auto;
 }
@@ -75,7 +80,7 @@ header > .auth-action > p {
 	position: absolute;
 	top: 120%;
 	width: 240px;
-    left: 40%;
+	left: 40%;
 	display: none;
 	color: #fff;
 	padding: 12px;
@@ -91,22 +96,23 @@ header > .auth-action > p {
 #main-container {
 	display: flex;
 	flex-direction: row;
-	background-color: darksalmon;
+	background-color: rgb(245, 245, 245);
 }
 
 .side-bar {
 	position: relative;
-	background-color: beige;
+	background-color: rgb(230, 230, 255);
 	padding: 12px;
+	border-radius: 4px;
 }
 
-.side-bar > .title {
+.side-bar>.title {
 	margin: 8px auto;
 	text-align: center;
 }
 
-.side-bar > .btn-option {
-	background-color: rgb(255, 167, 51);
+.side-bar>.btn-option {
+	background-color: rgb(140, 212, 253);
 	color: #fff;
 	border: 0.5px solid #00000080;
 	margin: 4px auto;
@@ -116,11 +122,13 @@ header > .auth-action > p {
 
 .display-section {
 	background-color: #f2f2f2;
-	padding: 36px;
+	padding: 0px 36px;
 }
 
 .displayer {
-	background-color: #d0d0d0;
+	background-color: #f8f8f8;
+	padding: 20px;
+	border-radius: 16px;
 
 }
 
@@ -129,4 +137,22 @@ header > .auth-action > p {
 	/* color: #f6fbff; */
 }
 
+.course-info-list {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 16px;
+}
 
+.course-info-item {
+	background-color: rgb(255, 244, 233);
+	padding: 12px;
+	width: 40%;
+}
+
+.course-info-item:hover {
+	background-color: rgb(252, 213, 174);
+	cursor: pointer;
+}
+
+.modal {}

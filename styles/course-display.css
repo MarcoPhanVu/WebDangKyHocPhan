@@ -15,15 +15,17 @@
 }
 
 #course-select-form > input {
-    padding: 6px 12px;
+    padding: 6px 16px;
+    background-color: rgb(57, 197, 197);
+    color: white;
 }
 
 #faculty-selector {
-    background-color: rgb(247, 132, 112);
+    /* background-color: rgb(247, 132, 112); */
     padding: 6px 12px;
     cursor: pointer;
     display: inline-block;
-    border: none;
+    border: 2px #5f54ff solid;
     text-align: center;
 }
 
@@ -48,7 +50,7 @@
 .course-item {
     position: relative;
     min-width: 60%;
-    background-color: rgb(255, 214, 249);
+    background-color: rgb(194, 215, 255);
     margin-bottom: 4px;
     cursor: pointer;
     display: flex;
@@ -70,20 +72,26 @@
     top: 50%;
     right: 8px;
     transform: translateY(-50%);
-    background-color: coral;
+    background-color: rgb(152, 154, 255);
+    padding: 8px;
 }
 
 /* CLASS FORM */
 .class-item {
-    background-color: rgb(176, 255, 177);
+    background-color: rgb(170, 241, 170);
     margin: 4px;
     position: relative;
     padding: 8px;
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 72%;
     gap: 12px;
     justify-content: space-between;
+    border-radius: 12px;
+}
+
+.class-item:hover {
+    background-color: rgb(187, 253, 187);
 }
 
 .class-item > .class-designation {
@@ -92,13 +100,18 @@
 }
 
 .class-item > .class-info {
-    background-color: rgb(245, 255, 199);
+    background-color: rgb(224, 255, 224);
+
     flex: 12;
+    padding: 8px;
+
 }
 
 .class-item > .class-info p {
     padding: 0;
     margin: 0;
+    padding-top: 8px;
+
 }
 
 .class-item > .class-info > .righty,
@@ -114,3 +127,8 @@
     text-align: left;
 }
 
+.class-displayer > form > input {
+    padding: 6px 16px;
+    background-color: rgb(57, 197, 197);
+    color: white;
+}
