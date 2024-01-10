@@ -12,10 +12,6 @@
 
 <body>
 	<?php include "./server/connection.php" ?>
-	<!-- <a href="./pages/learning.php">TO LEARNING</a> -->
-	<?php
-
-	?>
 	<header class="row">
 		<div class="home-link">
 			<img src="https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-DH-Su-Pham-TPHCM-HCMUE.png" alt="HCMUE Banner nha" style="height: 80px;">
@@ -30,34 +26,37 @@
 		</div>
 		<div class="auth-action">
 			<?php
-				if (!isset($_SESSION["user-type"])) {
-					header('Location: ./pages/login.php');
-				}
-				echo "<p class='user-id'>" . $_SESSION["user-type"] . "</p>";
-				echo "<p class='user-name'>" . $_SESSION["username"] . "</p>";
+			if (!isset($_SESSION["user-type"])) {
+				header('Location: ./pages/login.php');
+			}
+			echo "<p class='user-id'>" . $_SESSION["user-type"] . "</p>";
+			echo "<p class='user-name'>" . $_SESSION["username"] . "</p>";
 			?>
 		</div>
 	</header>
+
 	<div id="main-container">
 		<div class="side-bar mx-25 col-md-2">
 			<h3 class="title">Chức năng</h3>
 			<button class="btn-option" data-target="registering-course">Đăng ký học phần</button>
-			<button class="btn-option" data-target="schedule">Thời khoá biểu</button>
+			<!-- <button class="btn-option" data-target="schedule">Thời khoá biểu</button> -->
 			<button class="btn-option" data-target="course-info">Thông tin học phần</button>
-			<button class="btn-option" data-target="similar-course">Học phần tương đương</button>
-			<button class="btn-option" data-target="history">Lịch sử đăng ký</button>
+			<!-- <button class="btn-option" data-target="similar-course">Học phần tương đương</button> -->
+			<!-- <button class="btn-option" data-target="history">Lịch sử đăng ký</button> -->
 		</div>
 
 		<div class="display-section col-md-10">
-			<?php include "./pages/registering-course.php" ?>
-			<?php include "./pages/schedule.php" ?>
-			<?php include "./pages/course-info.php" ?>
-			<?php include "./pages/similar-course.php" ?>
-			<?php include "./pages/history.php" ?>
+			<?php
+			include "./pages/registering-course.php";
+			// include "./pages/schedule.php";
+			include "./pages/course-info.php";
+			// include "./pages/similar-course.php";
+			// include "./pages/history.php";
+			?>
 		</div>
 	</div>
+	
 	<footer></footer>
-
 	<script src="./scripts/script.js"></script>
 </body>
 

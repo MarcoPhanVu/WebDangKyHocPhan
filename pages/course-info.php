@@ -1,18 +1,20 @@
 <div class="displayer hidden" data-destination="course-info">
-    <h2 class="title">Course-Infadasdasdo</h2>
+    <h2 class="title">Course-Infor</h2>
     <div class="course-info-list">
         <?php
-        // $course_query = "SELECT * FROM `registration_results` AS r_r JOIN `class` as cl ON r_r.class_id = cl.id WHERE student_id = " . $_SESSION["user-id"];
-        $course_query = "SELECT 
-        cou.id AS cid,
-        cou.name AS cname,
-        cou.number_of_credits AS credit,
-        fac.id AS fid,
-        fac.name AS fname
-        FROM course AS cou
-        JOIN faculty AS fac ON cou.faculty_id = fac.id";
-        $course_query_result = mysqli_query($connection, $course_query);
-        $course_list = mysqli_fetch_all($course_query_result, MYSQLI_ASSOC);
+        $query = "
+            SELECT 
+                cou.id                  AS cid,
+                cou.name                AS cname,
+                cou.number_of_credits   AS credit,
+                fac.id                  AS fid,
+                fac.name                AS fname
+            FROM
+                course AS cou
+            INNER JOIN faculty AS fac
+                    ON cou.faculty_id = fac.id";
+        $result = DataProvider::get_instance()->execute_query($query);
+        $course_list = $result->fetchAll();
 
         foreach ($course_list as $course) {
             $cid = $course["cid"];
@@ -21,12 +23,8 @@
             $fid = $course["fid"];
             $fname = $course["fname"];
 
-            echo "<div class='course-info-item'><h4 class='title'>Course ID: ";
-            echo "[$fid.$cid] - $cname";
-            echo "</h4><div class='desc'>Môn này tên là: $cname, với số tín chỉ là $credit, thuộc khoa $fname";
-            echo "và lorem ipsum, dolor sit amet.</div></div>";
+            include realpath(__DIR__ . "/components/course-infor-item.php");
         }
         ?>
     </div>
-
 </div>
