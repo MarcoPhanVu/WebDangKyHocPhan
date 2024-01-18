@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<?php include "../server/connection.php" ?>
+	<?php include realpath(__DIR__ . "/../server/connection.php"); ?>
 	<div class="form-container">
 		<h1 class="title">Login</h1>
 		<form class="auth-form" action="" method="GET">

@@ -74,7 +74,7 @@ else
 
                     echo "<form action='" . SITEURL . "' method='GET'>";
                     echo "<input type='hidden' name='faculty-id' value='" . $_GET['faculty-id'] . "'>";
-                    include './pages/components/course-item.php';
+                    include realpath(__DIR__ . "/components/course-item.php");
                     echo "</form>";
                 }
             }
@@ -105,7 +105,7 @@ else
                     $classroom_id = $class["classroom_id"];
                     $class_designation = $_GET['faculty-id'] . "." . $_GET["course-id"] . "." . $class_id;
 
-                    include './pages/components/class-item.php';
+                    include realpath(__DIR__ . "/components/class-item.php");
                 }
                 echo "<input type='submit' value='Đăng ký' for='class-select-form'>";
             }

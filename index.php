@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<?php include "./server/connection.php" ?>
+	<?php include realpath(__DIR__ . "/server/connection.php"); ?>
 	<header class="row">
 		<div class="home-link">
 			<img src="https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-DH-Su-Pham-TPHCM-HCMUE.png" alt="HCMUE Banner nha" style="height: 80px;">
@@ -47,15 +47,15 @@
 
 		<div class="display-section col-md-10">
 			<?php
-			include "./pages/registering-course.php";
-			// include "./pages/schedule.php";
-			include "./pages/course-info.php";
-			// include "./pages/similar-course.php";
-			// include "./pages/history.php";
+			include realpath(__DIR__ . "/pages/registering-course.php");
+			// include realpath(__DIR__ . "/pages/schedule.php");
+			include realpath(__DIR__ . "/pages/course-info.php");
+			// include realpath(__DIR__ . "/pages/similar-course.php");
+			// include realpath(__DIR__ . "/pages/history.php");
 			?>
 		</div>
 	</div>
-	
+
 	<footer></footer>
 	<script src="./scripts/script.js"></script>
 </body>
