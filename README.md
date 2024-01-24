@@ -12,3 +12,10 @@ Nếu bạn là lập trình viên và mong muốn chạy mã nguồn này, sau 
 	- init.sql
 	- populate-database.sql
 1. Bây giờ, bạn có thể truy cập vào web: http://localhost/CourseRegistering/
+
+# Những người đóng góp
+Gửi lời cảm ơn đến những người đóng góp vào repo này 
+
+<a href="https://github.com/MarcoPhanVu/WebDangKyHocPhan/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=MarcoPhanVu/WebDangKyHocPhan" />
+</a>
